@@ -1,0 +1,24 @@
+nav {
+    background: #FFA500 !important;
+}
+
+ul li a {
+    color: white;
+}
+
+ul li a:hover {
+    background: darkorange;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+ul li ul li a:hover {
+    background: #FFA500;
+    transition: background-color 0.5s ease;
+}
+
+.btn_margin {
+    position: relative;
+    top: 9px;
+    margin-right: 3px;
+}

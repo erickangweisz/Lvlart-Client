@@ -1,0 +1,73 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        signup
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <input #username type="text" class="form-control" id="username" placeholder="username">
+            </div>
+            <div class="col-md-6">
+                <input #password type="password" class="form-control" id="password" placeholder="password">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <input #firstname type="text" class="form-control" id="firstname" placeholder="firstname">
+            </div>
+            <div class="col-md-6">
+                <input #lastname type="text" class="form-control" id="lastname" placeholder="lastname">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="birthday">birthday</label>
+                <input #birthday type="date" class="form-control" id="birthday">
+            </div>
+            <div class="col-md-6">
+                <label for="category">category</label>
+                <select #category class="form-control" id="category">
+                    <option [ngValue]="illustration">illustration</option>
+                    <option [ngValue]="photography">photography</option>
+                    <option [ngValue]="model">3d model</option>
+                </select>
+            </div>
+        </div>
+        <!--<br>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="avatar">upload avatar</label>
+                <input #avatar type="file" class="form-control" id="avatar" name="avatar">
+            </div>
+            <div class="col-md-6">
+                <label for="img_head">upload header image</label>
+                <input #img_head type="file" class="form-control" id="img_head" name="img_head">
+            </div>
+        </div>-->
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <input #profile_facebook type="text" class="form-control" placeholder="facebook profile">
+            </div>
+            <div class="col-md-6">
+                <input #profile_twitter type="text" class="form-control" placeholder="twitter profile">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <input #profile_pinterest type="text" class="form-control" placeholder="pinterest profile">
+            </div>
+            <div class="col-md-6">
+                <input #email type="email" class="form-control" placeholder="email">
+            </div>
+        </div>
+        <hr>
+        <button class="btn btn-success pull-right" (click)="signUp(username.value, password.value, firstname.value, lastname.value,
+                                                                   birthday.value, null, null, category.value,
+                                                                   profile_facebook.value, profile_twitter.value, profile_pinterest.value,
+                                                                   email.value)">create account</button>
+    </div>
+</div>
