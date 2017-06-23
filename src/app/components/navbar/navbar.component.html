@@ -20,22 +20,17 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <button class="btn btn-success btn-sm btn_margin" [routerLink]="[ '/profile']" *ngIf="false">
+                            <button class="btn btn-success btn-sm btn_margin" [routerLink]="[ '/profile']" *ngIf="isAuthenticated()">
                                 <i class="fa fa-user " aria-hidden="true"></i> Profile
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-info btn-sm btn_margin" [routerLink]="[ '/signup-form']">
-                                <i class="fa fa-plus-square-o" aria-hidden="true"></i> Sign up
-                            </button>
-                        </li>
-                        <li>
-                            <button class="btn btn-success btn-sm btn_margin" [routerLink]="[ '/signin-form']">
+                            <button class="btn btn-success btn-sm btn_margin" data-toggle="modal" data-target="#login-modal" *ngIf="hideSignInButton()">
                                 <i class="fa fa-sign-in " aria-hidden="true"></i> Sign in
                             </button>
                         </li>
                         <li>
-                            <button class="btn btn-primary btn-sm btn_margin" *ngIf="false">
+                            <button class="btn btn-primary btn-sm btn_margin" *ngIf="isAuthenticated()" (click)="signOut()">
                                 <i class="fa fa-sign-out " aria-hidden="true "></i> Sign out
                             </button>
                         </li>

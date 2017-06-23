@@ -7,6 +7,7 @@ import { DuelsComponent }              from './components/duels/duels.component'
 import { RankingComponent }            from './components/ranking/ranking.component'
 import { SignupFormComponent }         from './components/signup-form/signup-form.component'
 import { SigninFormComponent }         from './components/signin-form/signin-form.component'
+import { ProfileComponent }            from './components/profile/profile.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'ranking', component: RankingComponent },
   { path: 'signup-form', component: SignupFormComponent },
   { path: 'signin-form', component: SigninFormComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '**', redirectTo: '' }
 ]
 

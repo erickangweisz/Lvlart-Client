@@ -12,7 +12,8 @@ import { GalleryComponent } from './components/gallery/gallery.component'
 import { DuelsComponent } from './components/duels/duels.component'
 import { RankingComponent } from './components/ranking/ranking.component'
 import { SignupFormComponent } from './components/signup-form/signup-form.component'
-import { SigninFormComponent } from './components/signin-form/signin-form.component'
+import { SigninFormComponent } from './components/signin-form/signin-form.component';
+import { ProfileComponent } from './components/profile/profile.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SigninFormComponent } from './components/signin-form/signin-form.compon
     DuelsComponent,
     RankingComponent,
     SignupFormComponent,
-    SigninFormComponent
+    SigninFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
