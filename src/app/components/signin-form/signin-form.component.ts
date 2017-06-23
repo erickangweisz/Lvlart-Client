@@ -20,8 +20,9 @@ export class SigninFormComponent implements OnInit {
     if (email && password) {
       this.loginService.signin(email, password).subscribe(res => {})
       this.hideModal()
+      this.router.navigate(['profile'])
     } else {
-      console.log('falta uno de los campos')
+      console.log('data entry error')
     }
   }
 
