@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { LoginService } from '../../services/login/login.service'
 import { Router } from '@angular/router'
+import { LoginService } from '../../services/login/login.service'
 
 declare var $: any
 declare var require: any
