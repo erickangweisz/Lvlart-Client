@@ -1,34 +1,53 @@
 <app-signin-form></app-signin-form>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        signup
+<br>
+<div class="panel panel-default animated bounceInLeft">
+    <div class="panel-heading panel_heading">
+        <span class="txt_signup">Sign up</span>
     </div>
     <div class="panel-body">
+        <br>
         <div class="row">
             <div class="col-md-6">
-                <input #username type="text" class="form-control" id="username" placeholder="username">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input #username type="text" class="form-control" name="name" id="name" placeholder="Enter your username" />
+                </div>
+                <!--<input #username type="text" class="form-control" id="username" placeholder="username">-->
             </div>
             <div class="col-md-6">
-                <input #password type="password" class="form-control" id="password" placeholder="password">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input #password type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                </div>
+                <!--<input #password type="password" class="form-control" id="password" placeholder="password">-->
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-md-6">
-                <input #firstname type="text" class="form-control" id="firstname" placeholder="firstname">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input #firstname type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter your firstname" />
+                </div>
+                <!--<input #firstname type="text" class="form-control" id="firstname" placeholder="firstname">-->
             </div>
             <div class="col-md-6">
-                <input #lastname type="text" class="form-control" id="lastname" placeholder="lastname">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input #lastname type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter your lastname" />
+                </div>
+                <!--<input #lastname type="text" class="form-control" id="lastname" placeholder="lastname">-->
             </div>
         </div>
+        <br>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <label for="birthday">birthday</label>
+                <label for="birthday">Birthday</label>
                 <input #birthday type="date" class="form-control" id="birthday">
             </div>
             <div class="col-md-6">
-                <label for="category">category</label>
+                <label for="category">Category</label>
                 <select #category class="form-control" id="category">
                     <option [ngValue]="illustration">illustration</option>
                     <option [ngValue]="photography">photography</option>
@@ -47,24 +66,42 @@
                 <input #img_head type="file" class="form-control" id="img_head" name="img_head">
             </div>
         </div>-->
+        <br>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <input #profile_facebook type="text" class="form-control" placeholder="facebook profile">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+                    <input #profile_facebook type="text" class="form-control" name="profile_facebook" id="profile_facebook" placeholder="Enter your facebook profile" />
+                </div>
+                <!--<input #profile_facebook type="text" class="form-control" placeholder="facebook profile">-->
             </div>
             <div class="col-md-6">
-                <input #profile_twitter type="text" class="form-control" placeholder="twitter profile">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
+                    <input #profile_twitter type="text" class="form-control" name="profile_twitter" id="profile_twitter" placeholder="Enter your twitter profile" />
+                </div>
+                <!--<input #profile_twitter type="text" class="form-control" placeholder="twitter profile">-->
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-md-6">
-                <input #profile_pinterest type="text" class="form-control" placeholder="pinterest profile">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-pinterest-square" aria-hidden="true"></i></span>
+                    <input #profile_pinterest type="text" class="form-control" name="profile_pinterest" id="profile_pinterest" placeholder="Enter your pinterest profile" />
+                </div>
+                <!--<input #profile_pinterest type="text" class="form-control" placeholder="pinterest profile">-->
             </div>
             <div class="col-md-6">
-                <input #email type="email" class="form-control" placeholder="email">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                    <input #email type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                </div>
+                <!--<input #email type="email" class="form-control" placeholder="email">-->
             </div>
         </div>
+        <br>
         <hr>
         <button class="btn btn-success pull-right" (click)="signUp(username.value, password.value, firstname.value, lastname.value,
                                                                    birthday.value, null, null, category.value,

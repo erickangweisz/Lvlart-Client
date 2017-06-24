@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" align="center">
-                <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+                <img class="img-circle" id="img_logo" [src]='imgUrl'>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
@@ -18,8 +18,16 @@
                             <span id="text-login-msg">Type your email and password.</span>
                         </div>
                         <br>
-                        <input #email type="text" class="form-control" id="email" placeholder="email" required>
-                        <input #password type="password" class="form-control" id="password" placeholder="password">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input #email type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" required/>
+                        </div>
+                        <!--<input #email type="text" class="form-control" id="email" placeholder="email" required>-->
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                            <input #password type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                        </div>
+                        <!--<input #password type="password" class="form-control" id="password" placeholder="password">-->
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Remember me

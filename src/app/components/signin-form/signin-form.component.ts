@@ -11,6 +11,7 @@ declare var $: any
   providers: [ LoginService ]
 })
 export class SigninFormComponent implements OnInit {
+  imgUrl = 'http://bootsnipp.com/img/logo.jpg'
 
   constructor(private loginService: LoginService, private router: Router) {}
 

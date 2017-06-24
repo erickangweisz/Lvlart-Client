@@ -1,0 +1,23 @@
+/* begin | index lvl-art loading */
+
+.txt_lvlart {
+    color: #FF8B4D;
+    font-size: 30px;
+    font-style: bold;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.isLoading {
+    font-size: 18px;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -ms-animation: spin .7s infinite linear;
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+    font-size: 80px;
+}
+
+
+/* end | index lvl-art loading */
