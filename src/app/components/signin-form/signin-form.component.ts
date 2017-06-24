@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login/login.service'
 import { Router } from '@angular/router'
 
 declare var $: any
+declare var require: any
 
 @Component({
   selector: 'app-signin-form',
@@ -11,7 +12,7 @@ declare var $: any
   providers: [ LoginService ]
 })
 export class SigninFormComponent implements OnInit {
-  imgUrl = 'http://bootsnipp.com/img/logo.jpg'
+  imgUrl = require('./assets/LA.png')
 
   constructor(private loginService: LoginService, private router: Router) {}
 
