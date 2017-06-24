@@ -15,6 +15,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { SigninFormComponent } from './components/signin-form/signin-form.component'
 import { ProfileComponent } from './components/profile/profile.component'
 
+import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { ProfileComponent } from './components/profile/profile.component'
     RankingComponent,
     SignupFormComponent,
     SigninFormComponent,
-    ProfileComponent
+    ProfileComponent,
+
+    CarouselHeaderComponent
   ],
   imports: [
     BrowserModule,
