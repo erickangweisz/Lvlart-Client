@@ -10,7 +10,10 @@ import { UserService } from '../../services/user/user.service'
 
 export class CarouselHeaderComponent implements OnInit {
 
-  private usersOrderByScore: Array<string>
+  public usersOrderByScore: Array<string>
+  public usersId = Array
+
+  public thereAreUsers = false
 
   constructor(private userService: UserService) {}
 
@@ -19,8 +22,13 @@ export class CarouselHeaderComponent implements OnInit {
   }
 
   getXusersOrderByScore(number: number) {
-    this.userService.getXusersOrderByScore(number).subscribe(res => { 
-      console.log(res)
+    this.userService.getXusersOrderByScore(number).subscribe(res => {
+      this.usersOrderByScore = res
+      let lengthUsers = this.usersOrderByScore['users'].length
+      for (let i=0; i<lengthUsers; i++) {
+        this.usersId[i] = this.usersOrderByScore['users'][i]._id
+        this.thereAreUsers = true
+      }
     })
   }
 
