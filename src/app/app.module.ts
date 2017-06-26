@@ -16,7 +16,8 @@ import { SigninFormComponent } from './components/signin-form/signin-form.compon
 import { ProfileComponent } from './components/profile/profile.component'
 
 import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component';
-import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component'
+import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component';
+import { AsideComponent } from './components/aside/aside.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { CarouselVisitedComponent } from './components/carousel-visited/carousel
 
     CarouselHeaderComponent,
 
-    CarouselVisitedComponent
+    CarouselVisitedComponent,
+
+    AsideComponent
   ],
   imports: [
     BrowserModule,
