@@ -12,4 +12,9 @@ export class UserService {
         .map(res => res.json())
   }
 
+  public getXusersOrderByVisits(number: number) {
+    return this.http.get('http://localhost:3001/api/users/' + number + '/visits')
+        .map(res => res.json())
+  }
+
 }

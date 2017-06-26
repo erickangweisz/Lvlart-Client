@@ -15,7 +15,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { SigninFormComponent } from './components/signin-form/signin-form.component'
 import { ProfileComponent } from './components/profile/profile.component'
 
-import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component'
+import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component';
+import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { CarouselHeaderComponent } from './components/carousel-header/carousel-h
     SigninFormComponent,
     ProfileComponent,
 
-    CarouselHeaderComponent
+    CarouselHeaderComponent,
+
+    CarouselVisitedComponent
   ],
   imports: [
     BrowserModule,
