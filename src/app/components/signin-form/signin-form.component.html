@@ -11,7 +11,7 @@
             <!-- Begin # DIV Form -->
             <div id="div-forms">
                 <!-- Begin # Login Form -->
-                <form id="login-form">
+                <form #signinForm="ngForm" (ngSubmit)="onSubmit(signinForm.value)" id="login-form">
                     <div class="modal-body">
                         <div id="div-login-msg">
                             <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
@@ -20,14 +20,12 @@
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input #email type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" required/>
+                            <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter your Email" required/>
                         </div>
-                        <!--<input #email type="text" class="form-control" id="email" placeholder="email" required>-->
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input #password type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                            <input type="password" class="form-control" name="password" ngModel id="password" placeholder="Enter your Password" required/>
                         </div>
-                        <!--<input #password type="password" class="form-control" id="password" placeholder="password">-->
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Remember me
@@ -36,7 +34,7 @@
                     </div>
                     <div class="modal-footer">
                         <div>
-                            <button class="btn btn-success form-control" (click)="signIn(email.value, password.value)">sign in</button>
+                            <button type="submit" class="btn btn-success form-control">submit</button>
                         </div>
                         <div>
                             <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>

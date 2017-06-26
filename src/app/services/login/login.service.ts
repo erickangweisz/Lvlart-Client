@@ -17,21 +17,21 @@ export class LoginService {
   }
 
   public signup(username: string, password: string, firstname: string, lastname: string, birthday: Date,
-                avatar: string, email: string, category: string, profile_facebook: string, profile_twitter: string,
-                profile_pinterest: string, img_head: string) {
+                category: string, profile_facebook: string, profile_twitter: string,
+                profile_pinterest: string, email: string) {
     let body = {
       "username": username,
       "password": password,
       "firstname": firstname,
       "lastname": lastname,
       "birthday": birthday,
-      "avatar": avatar,
+      "avatar": null,
       "email": email,
       "category": category,
       "profile_facebook": profile_facebook,
       "profile_twitter": profile_twitter,
       "profile_pinterest": profile_pinterest,
-      "img_head": img_head
+      "img_head": null
     }
     return this.http.post('http://localhost:3001/api/signup', body)
       .map(res => console.log(res))

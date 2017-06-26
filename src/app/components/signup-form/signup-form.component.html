@@ -6,98 +6,84 @@
     </div>
     <div class="panel-body">
         <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                    <input #username type="text" class="form-control" name="name" id="name" placeholder="Enter your username" />
+        <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm.value)" id="signup-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="username" ngModel id="username" placeholder="Enter your username" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input type="password" class="form-control" name="password" ngModel id="password" placeholder="Enter your Password" />
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input #password type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="firstname" ngModel id="firstname" placeholder="Enter your firstname" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="lastname" ngModel id="lastname" placeholder="Enter your lastname" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input #firstname type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter your firstname" />
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" class="form-control" name="birthday" ngModel id="birthday">
+                </div>
+                <div class="col-md-6">
+                    <label for="category">Category</label>
+                    <select [(ngModel)]="strValue" class="form-control" name="category" ngModel>
+                        <option *ngFor="let category of categories" [ngValue]="category">{{ category }}</option>
+                    </select>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                    <input #lastname type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter your lastname" />
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="profile_facebook" ngModel id="profile_facebook" placeholder="Enter your facebook profile" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="profile_twitter" ngModel id="profile_twitter" placeholder="Enter your twitter profile" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <label for="birthday">Birthday</label>
-                <input #birthday type="date" class="form-control" id="birthday">
-            </div>
-            <div class="col-md-6">
-                <label for="category">Category</label>
-                <select #category class="form-control" id="category">
-                    <option [ngValue]="illustration">illustration</option>
-                    <option [ngValue]="photography">photography</option>
-                    <option [ngValue]="model">3d model</option>
-                </select>
-            </div>
-        </div>
-        <!--<br>
-        <div class="row">
-            <div class="col-md-6">
-                <label for="avatar">upload avatar</label>
-                <input #avatar type="file" class="form-control" id="avatar" name="avatar">
-            </div>
-            <div class="col-md-6">
-                <label for="img_head">upload header image</label>
-                <input #img_head type="file" class="form-control" id="img_head" name="img_head">
-            </div>
-        </div>-->
-        <br>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
-                    <input #profile_facebook type="text" class="form-control" name="profile_facebook" id="profile_facebook" placeholder="Enter your facebook profile" />
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-pinterest-square" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="profile_pinterest" ngModel id="profile_pinterest" placeholder="Enter your pinterest profile" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter your Email" />
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
-                    <input #profile_twitter type="text" class="form-control" name="profile_twitter" id="profile_twitter" placeholder="Enter your twitter profile" />
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-pinterest-square" aria-hidden="true"></i></span>
-                    <input #profile_pinterest type="text" class="form-control" name="profile_pinterest" id="profile_pinterest" placeholder="Enter your pinterest profile" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                    <input #email type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
-                </div>
-            </div>
-        </div>
-        <br>
-        <hr>
-        <button class="btn btn-success pull-right" (click)="signUp(username.value, password.value, firstname.value, lastname.value,
-                                                                   birthday.value, null, null, category.value,
-                                                                   profile_facebook.value, profile_twitter.value, profile_pinterest.value,
-                                                                   email.value)">create account</button>
+            <br>
+            <hr>
+            <button type="submit" class="btn btn-success pull-right">submit</button>
+        </form>
     </div>
 </div>

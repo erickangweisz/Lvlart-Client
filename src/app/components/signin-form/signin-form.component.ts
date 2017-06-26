@@ -18,14 +18,11 @@ export class SigninFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  signIn(email: string, password: string) {
-    if (email && password) {
-      this.loginService.signin(email, password).subscribe(res => {})
+  onSubmit(value: any) {
+    this.loginService.signin(value.email, value.password).subscribe(res => {})
       this.hideModal()
-      this.router.navigate(['profile'])
-    } else {
-      console.log('data entry error')
-    }
+      if (localStorage.getItem('token')) this.router.navigate(['profile'])
+      else this.router.navigate(['home'])
   }
 
   hideModal() {
