@@ -29,4 +29,14 @@ export class SigninFormComponent implements OnInit {
     $('#login-modal').modal('toggle')
   }
 
+  isCompleted() {
+    if ($('#email').val() != '' && $('#password').val() != '') { 
+      $('#submit').removeAttr('disabled')
+      $('#submit').addClass('btn-success')
+    } else {
+      $('#submit').attr('disabled')
+      $('#submit').removeClass('btn-success')
+    } 
+  }
+
 }

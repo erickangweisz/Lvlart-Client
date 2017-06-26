@@ -20,11 +20,11 @@
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter your Email" required/>
+                            <input type="text" class="form-control" name="email" ngModel id="email" placeholder="Enter your Email" required (keyup)="isCompleted()"/>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                            <input type="password" class="form-control" name="password" ngModel id="password" placeholder="Enter your Password" required/>
+                            <input type="password" class="form-control" name="password" ngModel id="password" placeholder="Enter your Password" required (keyup)="isCompleted()"/>
                         </div>
                         <div class="checkbox">
                             <label>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="modal-footer">
                         <div>
-                            <button type="submit" class="btn btn-success form-control">submit</button>
+                            <button type="submit" class="btn form-control" disabled id="submit">sign in</button>
                         </div>
                         <div>
                             <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
