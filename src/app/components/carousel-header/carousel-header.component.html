@@ -10,7 +10,7 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item active">
+                <div class="item">
                     <div *ngIf="thereAreUsers">
                         <img src="http://localhost:3001/api/user/{{ this.usersId[0] }}/imghead" alt="First slide">
                     </div>
@@ -78,6 +78,9 @@
                         </div>
                     </div>
                     <!-- /header-text -->
+                </div>
+                <div class="item active">
+                    <img src="http://localhost:3001/images/lvlart" class="animated pulse"/>
                 </div>
             </div>
             <!-- Controls -->
