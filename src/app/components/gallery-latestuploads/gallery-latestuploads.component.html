@@ -1,0 +1,49 @@
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal_img text-center" id="modal_img">
+            <div class="modal-header" id="m_header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="modal-title" id="txt_header_modal">
+                    <div *ngIf="thereAreImages">
+                        <i class="fa fa-tag" aria-hidden="true"></i> {{ imagesOrderByLatestUpload[imageModal].title }}
+                    </div>
+                </span>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="thereAreImages">
+                    <img src="http://localhost:3001/api/image/{{ imagesId[imageModal] }}/urlimage" class="img-responsive image_padd" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal content -->
+<div class="panel panel-default">
+    <div class="panel-heading panel_heading">
+        <span id="txt_visited">LATEST UPLOADS</span>
+    </div>
+    <div class="panel-body panel_body">
+        <div *ngFor="let image of imagesId; let i = index">
+            <div class="col-md-4 col-sm-4 col-xs-6 div_img">
+                <div *ngIf="thereAreImages">
+                    <img src="http://localhost:3001/api/image/{{ imagesId[i] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#myModal" (click)="selectImage(i)"/>
+                
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-3">
+                        <div class="div_lvl">
+                            <span class="txt_lvl">16</span>
+                            <span class="txt_num">LVL</span>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong> {{ imagesOrderByLatestUpload[i].title }}</strong></span><br>
+                        <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> test</a></span><br>
+                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ imagesOrderByLatestUpload[i].category }}</span><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

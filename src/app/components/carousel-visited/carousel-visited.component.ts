@@ -12,7 +12,7 @@ declare var $:any
 export class CarouselVisitedComponent implements OnInit {
 
   public usersOrderByVisits: Array<string>
-  public usersId = Array
+  public usersId = new Array
 
   public thereAreUsers = false
 
@@ -29,6 +29,7 @@ export class CarouselVisitedComponent implements OnInit {
   getXusersOrderByVisits(number: number) {
     this.userService.getXusersOrderByVisits(number).subscribe(res => {
       this.usersOrderByVisits = res
+
       let lengthUsers = this.usersOrderByVisits['users'].length
       for (let i=0; i<lengthUsers; i++) {
         this.usersId[i] = this.usersOrderByVisits['users'][i]._id

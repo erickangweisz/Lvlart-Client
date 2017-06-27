@@ -17,7 +17,8 @@ import { ProfileComponent } from './components/profile/profile.component'
 
 import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component';
 import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component';
-import { AsideComponent } from './components/aside/aside.component'
+import { AsideComponent } from './components/aside/aside.component';
+import { GalleryLatestuploadsComponent } from './components/gallery-latestuploads/gallery-latestuploads.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { AsideComponent } from './components/aside/aside.component'
 
     CarouselVisitedComponent,
 
-    AsideComponent
+    AsideComponent,
+
+    GalleryLatestuploadsComponent
   ],
   imports: [
     BrowserModule,
