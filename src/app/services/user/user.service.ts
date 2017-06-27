@@ -22,4 +22,9 @@ export class UserService {
         .map(res => res.json())
   }
 
+  public getUserById(userId: string) {
+    return this.http.get('http://localhost:3001/api/user/' + userId)
+        .map(res => res.json())
+  }
+
 }
