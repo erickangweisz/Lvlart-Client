@@ -25,7 +25,7 @@
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">score: <strong>{{ usersOrderByScore['users'][0].score }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][0].score | level }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
                                 </div>
                             </h3>
                             <br>
@@ -48,7 +48,7 @@
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">score: <strong>{{ usersOrderByScore['users'][1].score }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][1].score | level }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
                                 </div>
                             </h3>
                             <br>
@@ -71,7 +71,7 @@
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">score: <strong>{{ usersOrderByScore['users'][2].score }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][2].score | level }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
                                 </div>
                             </h3>
                             <br>

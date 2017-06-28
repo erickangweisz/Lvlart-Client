@@ -15,11 +15,12 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { SigninFormComponent } from './components/signin-form/signin-form.component'
 import { ProfileComponent } from './components/profile/profile.component'
 
-import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component';
-import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component';
-import { AsideComponent } from './components/aside/aside.component';
-import { GalleryLatestuploadsComponent } from './components/gallery-latestuploads/gallery-latestuploads.component';
-import { LevelPipe } from './pipes/level/level.pipe'
+import { CarouselHeaderComponent } from './components/carousel-header/carousel-header.component'
+import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component'
+import { AsideComponent } from './components/aside/aside.component'
+import { GalleryLatestuploadsComponent } from './components/gallery-latestuploads/gallery-latestuploads.component'
+import { LevelPipe } from './pipes/level/level.pipe';
+import { GalleryTopratedComponent } from './components/gallery-toprated/gallery-toprated.component'
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { LevelPipe } from './pipes/level/level.pipe'
 
     GalleryLatestuploadsComponent,
 
-    LevelPipe
+    LevelPipe,
+
+    GalleryTopratedComponent
   ],
   imports: [
     BrowserModule,

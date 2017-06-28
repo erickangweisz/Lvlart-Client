@@ -12,4 +12,9 @@ export class ImageService {
         .map(res => res.json())
   }
 
+  public getXimagesOrderByScore(number: number) {
+    return this.http.get('http://localhost:3001/api/images/' + number + '/likes')
+        .map(res => res.json())
+  }
+
 }
