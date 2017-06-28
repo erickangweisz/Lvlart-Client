@@ -32,9 +32,14 @@
                 
                 <div class="row hidden-sm hidden-xs">
                     <div class="col-md-3">
-                        <div class="div_lvl">
-                            <span class="txt_lvl">16</span>
+                        <!--<div class="div_lvl">
+                            <span class="txt_lvl">{{ 50 | level }}</span>
                             <span class="txt_num">LVL</span>
+                        </div>-->
+                        <div class="Aligner div_lvl">
+                            <div class="Aligner-item Aligner-item--top"></div>
+                            <div class="Aligner-item txt_num">{{ scoreUsers[i] | level }}</div>
+                            <div class="Aligner-item Aligner-item--bottom txt_lvl">LVL</div>
                         </div>
                     </div>
                     <div class="col-md-9">

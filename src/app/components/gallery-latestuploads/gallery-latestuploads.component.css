@@ -58,21 +58,19 @@
     border-color: #FFA500 !important;
 }
 
-.txt_lvl {
+.txt_num {
     font-size: 30px;
     font-family: 'Fjalla One', sans-serif;
     color: white;
-    margin-left: 21%;
-    display: inline;
 }
 
-.txt_num {
+.txt_lvl {
     color: white;
     font-size: 10px;
     float: left;
     position: absolute;
-    top: 35px;
-    left: 27px;
+    top: 39px;
+    left: 34px;
 }
 
 .txt_score {
@@ -107,4 +105,24 @@
     width: 800px;
     position: relative;
     left: -15%;
+}
+
+/*  flexbox */
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
 }
