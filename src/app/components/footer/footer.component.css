@@ -1,0 +1,27 @@
+footer {
+    background-color: #3f3f3f;
+}
+
+#justpushtobottom {
+    height: 82vh;
+}
+
+a i {
+    color: #FFA500;
+}
+
+a i:hover {
+    color: #FFE6B8;
+    -webkit-transition: width 2s;
+    /* Safari */
+    transition: width 2s;
+}
+
+p,
+a {
+    color: white;
+}
+
+.margin_left {
+    margin-left: 15px;
+}

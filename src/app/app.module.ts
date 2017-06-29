@@ -19,8 +19,11 @@ import { CarouselHeaderComponent } from './components/carousel-header/carousel-h
 import { CarouselVisitedComponent } from './components/carousel-visited/carousel-visited.component'
 import { AsideComponent } from './components/aside/aside.component'
 import { GalleryLatestuploadsComponent } from './components/gallery-latestuploads/gallery-latestuploads.component'
-import { LevelPipe } from './pipes/level/level.pipe';
+import { LevelPipe } from './pipes/level/level.pipe'
 import { GalleryTopratedComponent } from './components/gallery-toprated/gallery-toprated.component'
+import { GalleryDuelsComponent } from './components/gallery-duels/gallery-duels.component';
+import { FooterComponent } from './components/footer/footer.component'
+
 
 @NgModule({
   declarations: [
@@ -33,18 +36,14 @@ import { GalleryTopratedComponent } from './components/gallery-toprated/gallery-
     SignupFormComponent,
     SigninFormComponent,
     ProfileComponent,
-
     CarouselHeaderComponent,
-
     CarouselVisitedComponent,
-
     AsideComponent,
-
     GalleryLatestuploadsComponent,
-
     LevelPipe,
-
-    GalleryTopratedComponent
+    GalleryTopratedComponent,
+    GalleryDuelsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,92 @@
+<!-- Modal challenger -->
+<div id="challengerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal_img text-center" id="modal_img">
+            <div class="modal-header" id="m_header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="modal-title" id="txt_header_modal">
+                    <i class="fa fa-tag" aria-hidden="true"></i> {{ themesTitles[imageModal] }}
+                </span>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="thereAreDuels">
+                    <img src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenger" class="img-responsive image_padd" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal challenger -->
+
+<!-- Modal challenged -->
+<div id="challengedModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal_img text-center" id="modal_img">
+            <div class="modal-header" id="m_header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <span class="modal-title" id="txt_header_modal">
+                    <i class="fa fa-tag" aria-hidden="true"></i> {{ themesTitles[imageModal] }}
+                </span>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="thereAreDuels">
+                    <img src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenged" class="img-responsive image_padd" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal challenged -->
+
+<div class="panel panel-default">
+    <div class="panel-heading panel_heading">
+        <span id="txt_visited">CHALLENGES IN PROGRESS</span>
+    </div>
+    <br>
+    <div class="panel-body panel_body">
+        <div *ngFor="let duel of duelsOrderByCreation; let i = index">
+            <div class="row">
+                <div class="col-md-2 col-sm-3 col-xs-3">
+                    <div *ngIf="thereAreDuels">
+                        <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenger" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#challengerModal" (click)="selectImage(i)"/>
+                    </div>
+                    <div class="div_lvl_left">
+                        <div class="Aligner div_lvl txt_lvl_left">
+                            <div class="Aligner-item Aligner-item--top"></div>
+                            <div class="Aligner-item txt_num">{{ scoreChallengerUsers[i] | level }}</div>
+                            <div class="Aligner-item Aligner-item--bottom txt_lvl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <span class="txt_username"><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ challengerUsernames[i] }}</a></span><br>
+                    <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ likesUserChallenger[i] }}</span><br>
+                    <span><i class="fa fa-hashtag" aria-hidden="true"></i> {{ themesCategory[i] }}</span>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6 text-center">
+                    <img src="http://localhost:3001/images/vs" class="img_style">
+                </div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <span class="pull-right txt_username"><a href="#"> {{ challengedUsernames[i] }}</a> <i class="fa fa-user-circle" aria-hidden="true"></i></span><br>
+                    <span class="pull-right">{{ likesUserChallenged[i] }} <i class="fa fa-thumbs-o-up icon-flipped" aria-hidden="true"></i></span><br>
+                    <span class="pull-right"> {{ themesCategory[i] }} <i class="fa fa-hashtag" aria-hidden="true"></i></span>
+                </div>
+                <div class="col-md-2 col-sm-3 col-xs-3">
+                    <div *ngIf="thereAreDuels">
+                        <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenged" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#challengedModal" (click)="selectImage(i)"/>
+                    </div>
+                    <div class="div_lvl_right">
+                        <div class="Aligner div_lvl txt_lvl_left">
+                            <div class="Aligner-item Aligner-item--top"></div>
+                            <div class="Aligner-item txt_num">{{ scoreChallengedUsers[i] | level }}</div>
+                            <div class="Aligner-item Aligner-item--bottom txt_lvl"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

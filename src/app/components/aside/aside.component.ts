@@ -10,17 +10,21 @@ import { UserService } from '../../services/user/user.service'
 export class AsideComponent implements OnInit {
 
   public usersOrderByCategory: Array<string>
+  public usersOrderByVictories: Array<string>
 
   public illustrationUsers: Array<any>
   public photographyUsers: Array<any>
   public modelingUsers: Array<any>
+  public victoriesUsers: Array<any>
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByCategory(10, 'illustration')
-    this.getXusersOrderByCategory(10, 'photography')
-    this.getXusersOrderByCategory(10, 'modeling')
+    this.getXusersOrderByCategory(12, 'illustration')
+    this.getXusersOrderByCategory(12, 'photography')
+    this.getXusersOrderByCategory(12, 'modeling')
+
+    this.getXusersOrderByVictories(12)
   }
 
   getXusersOrderByCategory(number: number, category: string) {
@@ -34,6 +38,14 @@ export class AsideComponent implements OnInit {
           break
         case 'modeling':
           this.modelingUsers = res['users']
+      }
+    })
+  }
+
+  getXusersOrderByVictories(number: number) {
+    this.userService.getXusersOrderByVictories(number).subscribe(res => {
+      for (let i=0; i<this.illustrationUsers.length; i++) {
+        this.victoriesUsers = res['users']
       }
     })
   }

@@ -50,6 +50,7 @@ export class GalleryLatestuploadsComponent implements OnInit {
     })
   }
 
+  // select image modal
   selectImage(i: number) {
     this.imageModal = i
   }

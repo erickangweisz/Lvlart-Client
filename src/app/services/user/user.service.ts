@@ -27,4 +27,9 @@ export class UserService {
         .map(res => res.json())
   }
 
+  public getXusersOrderByVictories(number: number) {
+    return this.http.get('http://localhost:3001/api/users/' + number + '/victories')
+        .map(res => res.json())
+  }
+
 }

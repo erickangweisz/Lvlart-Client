@@ -11,6 +11,7 @@ import { UserService } from '../../services/user/user.service'
 export class GalleryTopratedComponent implements OnInit {
 
   public imagesOrderByScore = new Array
+  public imagesTitles = new Array
   public imagesId = new Array
 
   public usernames = new Array
@@ -36,11 +37,10 @@ export class GalleryTopratedComponent implements OnInit {
       for (let i=0; i<lengthImages; i++) {
         this.imagesId[i] = this.imagesOrderByScore[i]['_id']
         this.usersId[i] = this.imagesOrderByScore[i]['id_user']
+        this.imagesTitles[i] = this.imagesOrderByScore[i]['title']
         this.thereAreImages = true
 
         this.getUserById(this.usersId[i]) // call all the users *
-
-        console.log(this.imagesId[i])
       }
     })
   }
