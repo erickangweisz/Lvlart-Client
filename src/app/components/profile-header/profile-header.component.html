@@ -3,7 +3,7 @@
         <!-- jumbotron -->
         <div class="jumbotron" style="padding: 0px !important; ">
             <button class="btn btn-default btn_loadImage"><i class="fa fa-file-image-o" aria-hidden="true"></i></button>
-            <img src="https://dummyimage.com/1115x350/C6CACC/C6CACC" alt="First slide" style="width:100%;">
+            <img src="http://localhost:3001/api/user/{{ userid }}/imghead" alt="First slide" style="width:100%;">
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
@@ -16,14 +16,14 @@
                 <!-- btn github -->
                 <a href="https://www.github.com/erickangweisz" target="_blank" class="btn btn-default btn_github hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
                 <!-- img photo -->
-                <img src="https://dummyimage.com/350x350/C6CACC/C6CACC" alt="image profile" class="img-thumbnail img_photo hidden-xs pull-left" />
+                <img src="http://localhost:3001/api/user/{{ userid }}/avatar" alt="image profile" class="img-thumbnail img_photo hidden-xs pull-left" />
             </div>
             <div class="col-md-8 col-sm-8 col-xs-8">
                 <!-- div orange -->
                 <div id="div_orange" class="pull-right hidden-sm hidden-xs"></div>
                 <!-- div orange2 -->
                 <div id="div_orange_2" class="pull-right hidden-sm hidden-xs">
-                    <span class="pull-right txt_name">username</span>
+                    <span class="pull-right txt_name">{{ firstname | uppercase }} {{ lastname | uppercase }}</span>
                 </div>
             </div>
         </div>

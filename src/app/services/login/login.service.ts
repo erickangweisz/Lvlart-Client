@@ -13,7 +13,7 @@ export class LoginService {
       "password": password
     }
     return this.http.post('http://localhost:3001/api/signin', body)
-      .map(res => localStorage.setItem('token', res.json().token), console.log('The token has been saved successfully on localStorage'))
+      .map(res => {localStorage.setItem('token', res.json().token), localStorage.setItem('user_id', res.json().user_id)}, console.log('The token has been saved successfully on localStorage'))
   }
 
   public signup(username: string, password: string, firstname: string, lastname: string, birthday: Date,

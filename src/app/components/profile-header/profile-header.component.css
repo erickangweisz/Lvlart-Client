@@ -11,7 +11,7 @@
     right: 2%;
     background: #ff9e03;
     width: 120%;
-    height: 20px;
+    height: 21px;
     z-index: 2;
 }
 
@@ -21,7 +21,7 @@
     right: 2%;
     background: #c98519;
     width: 120%;
-    height: 45px;
+    height: 47px;
     z-index: 2;
 }
 
@@ -29,31 +29,31 @@
     width: 73%;
     z-index: 3;
     position: absolute;
-    top: -19em;
+    top: -21em;
     margin-left: 10%;
 }
 
 .btn_facebook {
     position: absolute;
-    top: -27em;
+    top: -29em;
     left: 14%;
 }
 
 .btn_twitter {
     position: absolute;
-    top: -27em;
+    top: -29em;
     left: 34%;
 }
 
 .btn_pinterest {
     position: absolute;
-    top: -27em;
+    top: -29em;
     left: 54%;
 }
 
 .btn_github {
     position: absolute;
-    top: -27em;
+    top: -29em;
     left: 74%;
 }
 
