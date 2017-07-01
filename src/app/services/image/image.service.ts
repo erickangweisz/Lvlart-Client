@@ -22,4 +22,9 @@ export class ImageService {
         .map(res => res.json())
   }
 
+  public getXimagesOrderByCategory(number: number, category: string) {
+    return this.http.get('http://localhost:3001/api/images/' + number + '/category/' + category)
+        .map(res => res.json())
+  }
+
 }

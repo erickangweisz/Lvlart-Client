@@ -21,9 +21,11 @@ import { AsideComponent } from './components/aside/aside.component'
 import { GalleryLatestuploadsComponent } from './components/gallery-latestuploads/gallery-latestuploads.component'
 import { LevelPipe } from './pipes/level/level.pipe'
 import { GalleryTopratedComponent } from './components/gallery-toprated/gallery-toprated.component'
-import { GalleryDuelsComponent } from './components/gallery-duels/gallery-duels.component';
+import { GalleryDuelsComponent } from './components/gallery-duels/gallery-duels.component'
 import { FooterComponent } from './components/footer/footer.component'
-
+import { GalleryIllustrationComponent } from './components/gallery-illustration/gallery-illustration.component'
+import { GalleryPhotographyComponent } from './components/gallery-photography/gallery-photography.component'
+import { GalleryModelingComponent } from './components/gallery-modeling/gallery-modeling.component'
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { FooterComponent } from './components/footer/footer.component'
     LevelPipe,
     GalleryTopratedComponent,
     GalleryDuelsComponent,
-    FooterComponent
+    FooterComponent,
+    GalleryIllustrationComponent,
+    GalleryPhotographyComponent,
+    GalleryModelingComponent
   ],
   imports: [
     BrowserModule,

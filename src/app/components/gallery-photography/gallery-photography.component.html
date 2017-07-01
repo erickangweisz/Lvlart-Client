@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="modalPhotography" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content modal_img text-center" id="modal_img">
@@ -7,13 +7,13 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <span class="modal-title" id="txt_header_modal">
                     <div *ngIf="thereAreImages">
-                        <i class="fa fa-tag" aria-hidden="true"></i> {{ imagesOrderByLatestUpload[imageModal].title }}
+                        <i class="fa fa-tag" aria-hidden="true"></i>  {{ titleImagesOrderByCategory[imageModal] }}
                     </div>
                 </span>
             </div>
             <div class="modal-body">
                 <div *ngIf="thereAreImages">
-                    <img src="http://localhost:3001/api/image/{{ imagesId[imageModal] }}/urlimage" class="img-responsive image_padd" />
+                    <img src="http://localhost:3001/api/image/{{ imagesIdOrderByCategory[imageModal] }}/urlimage" class="img-responsive image_padd" />
                 </div>
             </div>
         </div>
@@ -23,26 +23,28 @@
 
 <div class="panel panel-default">
     <div class="panel-heading panel_heading">
-        <span id="txt_visited">LATEST UPLOADS</span>
+        <span id="txt_visited">
+            <i class="fa fa-camera-retro pull-left" aria-hidden="true"></i> PHOTOGRAPHY
+        </span>
     </div>
     <div class="panel-body panel_body">
-        <div *ngFor="let image of imagesId; let i = index">
-            <div class="col-md-4 col-sm-4 col-xs-6 div_img">
+        <div *ngFor="let image of imagesIdOrderByCategory; let i = index">
+            <div class="col-md-3 col-sm-3 col-xs-6 div_img">
                 <div *ngIf="thereAreImages">
-                    <img src="http://localhost:3001/api/image/{{ imagesId[i] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#myModal" (click)="selectImage(i)"/>
+                    <img src="http://localhost:3001/api/image/{{ imagesIdOrderByCategory[i] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#modalPhotography" (click)="selectImage(i)"/>
                 </div>
                 <div class="row hidden-sm hidden-xs">
                     <div class="col-md-3">
                         <div class="Aligner div_lvl">
                             <div class="Aligner-item Aligner-item--top"></div>
-                            <div class="Aligner-item txt_num">{{ scoreUsers[i] | level }}</div>
+                            <div class="Aligner-item txt_num">1</div>
                             <div class="Aligner-item Aligner-item--bottom txt_lvl">LVL</div>
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i><strong> {{ imagesOrderByLatestUpload[i].title | uppercase }}</strong></span><br>
+                        <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i><strong> {{ titleImagesOrderByCategory[i] | uppercase }}</strong></span><br>
                         <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ usernames[i] }}</a></span><br>
-                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ imagesOrderByLatestUpload[i].category }}</span><br>
+                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImagesOrderByCategory[i] }}</span><br>
                     </div>
                 </div>
             </div>
