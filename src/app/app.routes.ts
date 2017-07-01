@@ -1,5 +1,6 @@
 import { ModuleWithProviders }         from '@angular/core'
 import { Routes, RouterModule }        from '@angular/router'
+import { ProfileRoutes }               from './profile.routes'
 
 import { HomeComponent }               from './components/home/home.component'
 import { GalleryComponent }            from './components/gallery/gallery.component'
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'signup-form', component: SignupFormComponent },
   { path: 'signin-form', component: SigninFormComponent },
   { path: 'profile', component: ProfileComponent },
+  ...ProfileRoutes,
   { path: '**', redirectTo: '' }
 ]
 

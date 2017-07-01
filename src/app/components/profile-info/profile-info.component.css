@@ -1,0 +1,223 @@
+.div_gold {
+    position: absolute;
+    top: 18px;
+    left: 75px;
+    width: 210px;
+    height: 48px;
+    background: grey;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    /* For IE8 and earlier */
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.div_visits {
+    position: absolute;
+    top: 70px;
+    left: 75px;
+    width: 210px;
+    height: 38px;
+    background: grey;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    /* For IE8 and earlier */
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.div_notifications {
+    position: absolute;
+    top: -35px;
+    left: 75px;
+    width: 210px;
+    height: 38px;
+    background: grey;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    /* For IE8 and earlier */
+    border-radius: 18px;
+    z-index: -1;
+    background: #FF4D00;
+}
+
+.div_profile {
+    width: 87%;
+    height: 226px;
+    background: #363130;
+    margin-left: 9%;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 0;
+}
+
+.txt_gold {
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    position: relative;
+    top: 8px;
+    left: 37%;
+    text-shadow: 2px 2px black;
+}
+
+.txt_visits {
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    left: 26%;
+    text-shadow: 2px 2px black;
+}
+
+.txt_notifications {
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    left: 20%;
+    text-shadow: 2px 2px black;
+}
+
+.div_lvl {
+    width: 100px;
+    height: 100px;
+    background: #FFA500;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 15px;
+    background: #fe7c02;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#fe7c02, #fef0ad);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fe7c02, #fef0ad);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fe7c02, #fef0ad);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#fe7c02, #fef0ad);
+    /* Standard syntax */
+    position: absolute;
+    top: -5px;
+    left: 83%;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 1;
+}
+
+.txt_lvl {
+    font-size: 70px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    margin-left: 15%;
+    display: inline;
+    position: absolute;
+    top: -3px;
+    left: 70%;
+    z-index: 2;
+}
+
+.txt_num {
+    color: white;
+    font-size: 20px;
+    float: left;
+    position: absolute;
+    top: 67px;
+    left: 85.3%;
+    z-index: 2;
+}
+
+.img_profile {
+    position: relative;
+    top: 6.6%;
+    left: 3%;
+    z-index: 2;
+}
+
+.txt_nickname {
+    font-size: 30px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    position: relative;
+    top: -60px;
+    left: 6%;
+}
+
+.txt_likes {
+    font-size: 80px;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    position: absolute;
+    top: 60px;
+    left: 36.2%;
+}
+
+.txt_hand {
+    font-size: 55px;
+    position: absolute;
+    top: 90px;
+    left: 56%;
+    color: white;
+}
+
+.txt_description {
+    width: 55%;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 160px;
+    left: 36.7%;
+}
+
+.exp {
+    position: absolute;
+    top: 180px;
+    left: 36%;
+    color: white;
+    font-size: 20px;
+    font-style: bold;
+}
+
+.txt_exp {
+    position: relative;
+    top: 25px;
+    left: 4px;
+}
+
+.div_exp {
+    position: relative;
+    top: 4.5px;
+    left: 55px;
+    width: 310px;
+    height: 18px;
+    border-radius: 18px;
+    z-index: -1;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffff88+30,ffff88+37,ff0000+69 */
+    background: #ffff88;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #ffff88 30%, #ffff88 37%, #ff0000 69%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffff88 30%, #ffff88 37%, #ff0000 69%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffff88 30%, #ffff88 37%, #ff0000 69%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ff0000', GradientType=1);
+    /* IE6-9 */
+}
+
+.num_exp {
+    position: relative;
+    top: -5.5px;
+    left: 37%;
+    font-style: bold;
+}
+
+.txt_setting {
+    position: relative;
+    top: -183px;
+    left: 69%;
+    color: white;
+    font-style: bold;
+    font-size: 12px;
+}

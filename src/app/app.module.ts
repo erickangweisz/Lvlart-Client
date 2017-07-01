@@ -26,6 +26,11 @@ import { FooterComponent } from './components/footer/footer.component'
 import { GalleryIllustrationComponent } from './components/gallery-illustration/gallery-illustration.component'
 import { GalleryPhotographyComponent } from './components/gallery-photography/gallery-photography.component'
 import { GalleryModelingComponent } from './components/gallery-modeling/gallery-modeling.component'
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component'
+import { ProfileViewComponent } from './components/profile-view/profile-view.component'
+import { ProfileUploadimagesComponent } from './components/profile-uploadimages/profile-uploadimages.component';
+import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { GalleryModelingComponent } from './components/gallery-modeling/gallery-
     FooterComponent,
     GalleryIllustrationComponent,
     GalleryPhotographyComponent,
-    GalleryModelingComponent
+    GalleryModelingComponent,
+    ProfileEditComponent,
+    ProfileViewComponent,
+    ProfileUploadimagesComponent,
+    ProfileHeaderComponent,
+    ProfileInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,67 @@
+.btn_loadImage {
+    z-index: 1;
+    position: absolute;
+    right: 3%;
+    top: 3%
+}
+
+#div_orange {
+    position: absolute;
+    top: -3.7em;
+    right: 2%;
+    background: #ff9e03;
+    width: 120%;
+    height: 20px;
+    z-index: 2;
+}
+
+#div_orange_2 {
+    position: absolute;
+    top: -7.1em;
+    right: 2%;
+    background: #c98519;
+    width: 120%;
+    height: 45px;
+    z-index: 2;
+}
+
+.img_photo {
+    width: 73%;
+    z-index: 3;
+    position: absolute;
+    top: -19em;
+    margin-left: 10%;
+}
+
+.btn_facebook {
+    position: absolute;
+    top: -27em;
+    left: 14%;
+}
+
+.btn_twitter {
+    position: absolute;
+    top: -27em;
+    left: 34%;
+}
+
+.btn_pinterest {
+    position: absolute;
+    top: -27em;
+    left: 54%;
+}
+
+.btn_github {
+    position: absolute;
+    top: -27em;
+    left: 74%;
+}
+
+.txt_name {
+    color: white;
+    margin-right: 2.5%;
+    margin-bottom: 2px;
+    font-size: 3.5em;
+    padding: 0px;
+    font-family: 'Fjalla One', sans-serif;
+}
