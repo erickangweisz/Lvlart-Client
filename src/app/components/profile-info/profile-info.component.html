@@ -2,19 +2,19 @@
 <div class="hidden-xs">
 <br>
 <div class="div_lvl"></div>
-<span class="txt_lvl alpha60">20</span>
+<span class="txt_lvl">{{ score | level }}</span>
 <span class="txt_num">LVL</span>
 <div class="div_profile">
     <img src="https://dummyimage.com/140x198/C6CACC/C6CACC" alt="Image profile" class="img_profile" />
-    <span class="txt_nickname"> username</span>
-    <span class="txt_likes">625</span> <span class="txt_hand">Likes</span><br>
+    <span class="txt_nickname"> {{ username }}</span>
+    <span class="txt_likes hidden-md">{{ score }}</span> <span class="txt_hand hidden-md">score</span><br>
     <!--<i class="fa fa-thumbs-o-up txt_hand" aria-hidden="true"></i>-->
-    <div class="txt_description">
+    <div class="txt_description hidden-md">
         Id cupidatat dolor ea eiusmod ad quis Lorem. Proident nisi qui nulla sunt laboris consectetur aliquip Lorem amet id laboris.
     </div>
-    <div class="exp">
+    <div class="exp hidden-md">
         <span class="txt_exp">EXP:</span>
-        <div class="div_exp"><span class="num_exp">1235/3000</span></div>
+        <div class="div_exp"><span class="num_exp">{{ experience }}/3000</span></div>
     </div>
     <a class="txt_setting btn btn-success btn-sm" [routerLink]="['/app-profile/uploadimages']"><i class="fa fa-upload" aria-hidden="true"></i></a>
     <a class="txt_setting btn btn-warning btn-sm" [routerLink]="['/app-profile/edit']"><i class=" fa fa-cog " aria-hidden="true "></i></a>

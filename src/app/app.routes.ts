@@ -9,6 +9,7 @@ import { RankingComponent }            from './components/ranking/ranking.compon
 import { SignupFormComponent }         from './components/signup-form/signup-form.component'
 import { SigninFormComponent }         from './components/signin-form/signin-form.component'
 import { ProfileComponent }            from './components/profile/profile.component'
+import { ChatComponent }               from './components/chat/chat.component'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'signup-form', component: SignupFormComponent },
   { path: 'signin-form', component: SigninFormComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'chat', component: ChatComponent },
   ...ProfileRoutes,
   { path: '**', redirectTo: '' }
 ]

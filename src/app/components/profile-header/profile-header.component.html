@@ -7,18 +7,26 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
-                <!-- btn facebook -->
-                <button href="https://www.facebook.com/erik.weiszk.1" target="_blank" class="btn btn-primary btn_facebook hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></button>
-                <!-- btn twitter -->
-                <button href="https://twitter.com/erik_weiszk" target="_blank" class="btn btn-info btn_twitter hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></button>
-                <!-- btn pinterest -->
-                <button class="btn btn-danger btn_pinterest hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i></button>
-                <!-- btn github -->
-                <a href="https://www.github.com/erickangweisz" target="_blank" class="btn btn-default btn_github hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
-                <!-- img photo -->
-                <img src="http://localhost:3001/api/user/{{ userid }}/avatar" alt="image profile" class="img-thumbnail img_photo hidden-xs pull-left" />
+                <div class="row">
+                    <div class="col-md-12 hidden-md">
+                        <!-- btn facebook -->
+                        <a [href]="urlfacebook" target="_blank" class="btn btn-primary btn_facebook hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                        <!-- btn twitter -->
+                        <a [href]="urltwitter" target="_blank" class="btn btn-info btn_twitter hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+                        <!-- btn pinterest -->
+                        <a [href]="urlpinterest" target="_blank" class="btn btn-danger btn_pinterest hidden-sm hidden-xs animated bounceInLeft"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true"></i></a>
+                        <!-- btn github -->
+                        <a href="https://www.github.com/erickangweisz" target="_blank" class="btn btn-default btn_github  animated bounceInLeft"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- img photo -->
+                        <img src="http://localhost:3001/api/user/{{ userid }}/avatar" alt="image profile" class="img-thumbnail img_photo hidden-xs hidden-sm pull-left" />
+                    </div>
+                </div>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-8">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <!-- div orange -->
                 <div id="div_orange" class="pull-right hidden-sm hidden-xs"></div>
                 <!-- div orange2 -->

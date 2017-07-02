@@ -110,7 +110,7 @@
     font-size: 70px;
     font-family: 'Fjalla One', sans-serif;
     color: white;
-    margin-left: 15%;
+    margin-left: 17.5%;
     display: inline;
     position: absolute;
     top: -3px;
@@ -124,7 +124,7 @@
     float: left;
     position: absolute;
     top: 67px;
-    left: 85.3%;
+    left: 88.2%;
     z-index: 2;
 }
 
@@ -150,7 +150,7 @@
     color: white;
     position: absolute;
     top: 60px;
-    left: 36.2%;
+    left: 36%;
 }
 
 .txt_hand {
@@ -216,7 +216,7 @@
 .txt_setting {
     position: relative;
     top: -183px;
-    left: 69%;
+    left: 72%;
     color: white;
     font-style: bold;
     font-size: 12px;

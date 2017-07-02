@@ -10,7 +10,7 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item">
+                <div class="item active">
                     <div *ngIf="thereAreUsers">
                         <img src="http://localhost:3001/api/user/{{ this.usersId[0] }}/imghead" alt="First slide">
                     </div>
@@ -19,13 +19,13 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="text_title"><strong>{{ usersOrderByScore['users'][0].username }}</strong></span>
+                                    <span class="text_title"><strong>{{ usersOrderByVisits['users'][0].username }}</strong></span>
                                 </div>
                             </h2>
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][0].score | level }}</strong> | {{ usersOrderByScore['users'][0].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByVisits['users'][0].score | level }}</strong> | {{ usersOrderByVisits['users'][0].categories }}</span>
                                 </div>
                             </h3>
                             <br>
@@ -42,13 +42,13 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span  class="text_title"><strong>{{ usersOrderByScore['users'][1].username }}</strong></span>
+                                    <span  class="text_title"><strong>{{ usersOrderByVisits['users'][1].username }}</strong></span>
                                 </div>
                             </h2>
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][1].score | level }}</strong> | {{ usersOrderByScore['users'][1].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByVisits['users'][1].score | level }}</strong> | {{ usersOrderByVisits['users'][1].categories }}</span>
                                 </div>
                             </h3>
                             <br>
@@ -65,22 +65,19 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="text_title"><strong>{{ usersOrderByScore['users'][2].username }}</strong></span>
+                                    <span class="text_title"><strong>{{ usersOrderByVisits['users'][2].username }}</strong></span>
                                 </div>
                             </h2>
                             <br>
                             <h3>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="border_box">level: <strong>{{ usersOrderByScore['users'][2].score | level }}</strong> | {{ usersOrderByScore['users'][2].categories }}</span>
+                                    <span class="border_box">level: <strong>{{ usersOrderByVisits['users'][2].score | level }}</strong> | {{ usersOrderByVisits['users'][2].category }}</span>
                                 </div>
                             </h3>
                             <br>
                         </div>
                     </div>
                     <!-- /header-text -->
-                </div>
-                <div class="item active">
-                    <img src="http://localhost:3001/images/lvlart" class="animated pulse"/>
                 </div>
             </div>
             <!-- Controls -->
