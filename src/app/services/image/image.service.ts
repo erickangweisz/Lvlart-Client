@@ -27,4 +27,9 @@ export class ImageService {
         .map(res => res.json())
   }
 
+  public getAllImagesByUserId(userId: string) {
+    return this.http.get('http://localhost:3001/api/images/user/' + userId)
+        .map(res => res.json())
+  }
+
 }

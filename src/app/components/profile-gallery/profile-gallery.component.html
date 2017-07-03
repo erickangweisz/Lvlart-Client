@@ -1,0 +1,46 @@
+<div class="panel panel-default">
+    <!-- Modal -->
+    <div id="galleyModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal_img text-center" id="modal_img">
+                <div class="modal-header" id="m_header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="modal-title" id="txt_header_modal">
+                        <i class="fa fa-tag" aria-hidden="true"></i> {{ imagesTitle[imageModal] }}
+                    </span>
+                </div>
+                <div class="modal-body">
+                  <div *ngIf="thereAreImages">
+                    <img src="http://localhost:3001/api/image/{{ imagesId[imageModal] }}/urlimage" class="img-responsive image_padd" />
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal content -->
+
+    <div class="panel-heading panel_heading">
+        <span id="txt_visited">GALLERY</span>
+    </div>
+    <div class="panel-body panel_body">
+        <div *ngIf="imagesId.length > 0 && imagesId.length <= 8">
+          <div *ngFor="let imageId of imagesId; let i = index">
+            <div class="col-md-3 col-sm-3 col-xs-6 div_img">
+              <div *ngIf="thereAreImages">
+                <img src="http://localhost:3001/api/image/{{ imageId }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#galleyModal" (click)="selectImage(i)"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="imagesId.length > 8">
+          <div *ngFor="let imageId of arrayLength; let i = index">
+            <div class="col-md-3 col-sm-3 col-xs-6 div_img">
+              <div *ngIf="thereAreImages">
+                <img src="http://localhost:3001/api/image/{{ imageId }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#myModal" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

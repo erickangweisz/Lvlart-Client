@@ -1,0 +1,97 @@
+/* carousel */
+
+.carousel-inner {
+    width: 100%;
+    max-height: 100px !important;
+    max-width: 100% !important;
+}
+
+.media-carousel {
+    margin-bottom: 0;
+    padding: 0 20px 0 20px;
+    margin: 0px;
+    height: 100px;
+    width: 100%;
+}
+
+
+/* Previous button  */
+
+.media-carousel .carousel-control.left {
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 3px solid #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    height: 35px;
+    width: 35px;
+    margin-top: 30px;
+}
+
+
+/* Next button  */
+
+.media-carousel .carousel-control.right {
+    background-image: none;
+    background: none repeat scroll 0 0 #222222;
+    border: 3px solid #FFFFFF;
+    border-radius: 20px 20px 20px 20px;
+    height: 35px;
+    width: 35px;
+    margin-top: 30px;
+}
+
+
+/* Changes the position of the indicators */
+
+.media-carousel .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+
+
+/* Changes the colour of the indicators */
+
+.media-carousel .carousel-indicators li {
+    background: #c0c0c0;
+}
+
+.media-carousel .carousel-indicators .active {
+    background: #333333;
+}
+
+.media-carousel img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* End carousel */
+
+
+/* div grey */
+
+#div_grey {
+    background: #4d4d4d;
+    width: 100%;
+    height: 25px;
+}
+
+#txt_visited {
+    color: white;
+    margin-left: 2.5%;
+    margin-top: 20%;
+    font-size: 20px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.without_margin {
+    margin:0px; 
+    padding: 0px;
+}
+
+.spacing {
+    height: 80px; width: 80px; 
+    margin-top: 3px;
+}

@@ -32,7 +32,9 @@ import { ProfileUploadimagesComponent } from './components/profile-uploadimages/
 import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import { GalleryHeaderComponent } from './components/gallery-header/gallery-header.component';
-import { ChatComponent } from './components/chat/chat.component'
+import { ChatComponent } from './components/chat/chat.component';
+import { ProfileLastvisitsComponent } from './components/profile-lastvisits/profile-lastvisits.component';
+import { ProfileGalleryComponent } from './components/profile-gallery/profile-gallery.component'
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ChatComponent } from './components/chat/chat.component'
     ProfileHeaderComponent,
     ProfileInfoComponent,
     GalleryHeaderComponent,
-    ChatComponent
+    ChatComponent,
+    ProfileLastvisitsComponent,
+    ProfileGalleryComponent
   ],
   imports: [
     BrowserModule,
