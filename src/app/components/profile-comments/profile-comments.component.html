@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading font_fjalla" id="panel_header">
+                <span>MY WALL</span>
+            </div>
+            <div class="panel-body" id="panel_body">
+                <div style="height: 629px">
+                    <div *ngFor="let comment of comments; let i = index">
+                        <strong>{{ senderUsernames[i] }}:</strong> <i class="pull-right">({{ createdAt[i] | date: 'short' }})</i><br>
+                        <hr class="margin_hr">
+                        <span><strong></strong></span>
+                        <p class="textComment">
+                            <span>{{ textComment[i] }}</span>
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

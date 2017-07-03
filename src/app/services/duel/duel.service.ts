@@ -12,4 +12,9 @@ export class DuelService {
         .map(res => res.json())
   }
 
+  public getAllDuelsByUserId(userId: string) {
+    return this.http.get('http://localhost:3001/api/duels/user/' + userId)
+        .map(res => res.json())
+  }
+
 }

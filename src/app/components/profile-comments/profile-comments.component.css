@@ -1,0 +1,36 @@
+#panel_header {
+    background: #808080;
+    color: white;
+    border-radius: 0px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.font_fjalla {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#panel_body {
+    background: #3f3f3f;
+    color: white;
+    border: 5px solid #808080;
+    height: 100%;
+}
+
+.margin_hr {
+    margin: 6px 0px;
+}
+
+ol li a {
+    color: white;
+}
+
+.ol_margin {
+    margin-left: 8%;
+    padding: 0px;
+}
+
+.textComment {
+    margin-left: 10%;
+    margin-right: 3%;
+}
