@@ -13,6 +13,10 @@ export class ProfileInfoComponent implements OnInit {
   public username: string
   public score: number
   public experience: number
+  public category: string
+
+  public thereAreUser = false
+  public urlImageInfo = ""
 
   constructor(private userService: UserService) {}
 
@@ -25,7 +29,24 @@ export class ProfileInfoComponent implements OnInit {
       this.username = res['user'].username
       this.score = res['user'].score
       this.experience = res['user'].experience
+      this.category = res['user'].categories
+      
+      this.getUrlImageInfo()
     })
+  }
+
+  getUrlImageInfo() {
+    switch (this.category) {
+      case 'illustration':
+        this.urlImageInfo = 'http://localhost:3001/images/cyclops'
+        break
+      case 'photography':
+        this.urlImageInfo = 'http://localhost:3001/images/spiderman'
+        break
+      case 'modeling':
+        this.urlImageInfo = 'http://localhost:3001/images/superman'
+        break
+    }
   }
 
 }
