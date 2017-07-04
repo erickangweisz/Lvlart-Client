@@ -6,12 +6,12 @@
 
 #txt_visited {
     color: white;
-    margin-left: 0.5%;
+    margin-left: 0.2%;
     font-size: 28px;
     font-family: 'Fjalla One', sans-serif;
-    position: absolute;
-    top: 5px;
-    left: 27px;
+    position: relative;
+    top: -5px;
+    left: 0px;
 }
 
 .panel_body {
@@ -163,4 +163,24 @@ span a {
     -o-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1);
+}
+
+/* btn circle */
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.loadimages {
+    font-size: 12px;
+}
+
+.without_margin {
+    margin: 0px;
+    padding: 0px;
 }

@@ -28,15 +28,17 @@ import { GalleryPhotographyComponent } from './components/gallery-photography/ga
 import { GalleryModelingComponent } from './components/gallery-modeling/gallery-modeling.component'
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component'
 import { ProfileViewComponent } from './components/profile-view/profile-view.component'
-import { ProfileUploadimagesComponent } from './components/profile-uploadimages/profile-uploadimages.component';
-import { ProfileHeaderComponent } from './components/profile-header/profile-header.component';
-import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
-import { GalleryHeaderComponent } from './components/gallery-header/gallery-header.component';
-import { ChatComponent } from './components/chat/chat.component';
-import { ProfileLastvisitsComponent } from './components/profile-lastvisits/profile-lastvisits.component';
-import { ProfileGalleryComponent } from './components/profile-gallery/profile-gallery.component';
-import { ProfileDuelsComponent } from './components/profile-duels/profile-duels.component';
+import { ProfileUploadimagesComponent } from './components/profile-uploadimages/profile-uploadimages.component'
+import { ProfileHeaderComponent } from './components/profile-header/profile-header.component'
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component'
+import { GalleryHeaderComponent } from './components/gallery-header/gallery-header.component'
+import { ChatComponent } from './components/chat/chat.component'
+import { ProfileLastvisitsComponent } from './components/profile-lastvisits/profile-lastvisits.component'
+import { ProfileGalleryComponent } from './components/profile-gallery/profile-gallery.component'
+import { ProfileDuelsComponent } from './components/profile-duels/profile-duels.component'
 import { ProfileCommentsComponent } from './components/profile-comments/profile-comments.component'
+import { DuelsIllustrationComponent } from './components/duels-illustration/duels-illustration.component';
+import { DuelsPhotographyComponent } from './components/duels-photography/duels-photography.component'
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { ProfileCommentsComponent } from './components/profile-comments/profile-
     ProfileLastvisitsComponent,
     ProfileGalleryComponent,
     ProfileDuelsComponent,
-    ProfileCommentsComponent
+    ProfileCommentsComponent,
+    DuelsIllustrationComponent,
+    DuelsPhotographyComponent
   ],
   imports: [
     BrowserModule,

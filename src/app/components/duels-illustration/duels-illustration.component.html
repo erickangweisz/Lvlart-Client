@@ -1,5 +1,5 @@
 <!-- Modal challenger -->
-<div id="challengerModal" class="modal fade" role="dialog">
+<div id="illustrationChallengerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content modal_img text-center" id="modal_img">
@@ -20,7 +20,7 @@
 <!-- End Modal challenger -->
 
 <!-- Modal challenged -->
-<div id="challengedModal" class="modal fade" role="dialog">
+<div id="illustrationChallengedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content modal_img text-center" id="modal_img">
@@ -40,22 +40,18 @@
 </div>
 <!-- End Modal challenged -->
 
+<!-- ILLUSTRATION DUELS -->
 <div class="panel panel-default">
     <div class="panel-heading panel_heading">
-        <span id="txt_visited"><i class="fa fa-tasks" aria-hidden="true"></i> DUELS IN PROGRESS</span>
+        <span id="txt_visited">ILLUSTRATION DUELS <i class="fa fa-paint-brush pull-left" aria-hidden="true"></i></span>
     </div>
     <br>
     <div class="panel-body panel_body">
-        <div *ngFor="let duel of duelsOrderByCreation; let i = index">
+        <div *ngFor="let duel of duelsOrderByCategory; let i = index">
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-3">
                     <div *ngIf="thereAreDuels">
-                        <div *ngIf="idImageChallenged[i] != null">
-                            <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenger" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#challengerModal" (click)="selectImage(i)"/>
-                        </div>
-                        <div *ngIf="idImageChallenged[i] == null">
-                            <img src="http://localhost:3001/images/noimage" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#challengerModal" (click)="selectImage(i)"/>
-                        </div>
+                        <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenger" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#illustrationChallengerModal" (click)="selectImage(i)"/>
                     </div>
                     <div class="div_lvl_left">
                         <div class="Aligner div_lvl txt_lvl_left">
@@ -80,7 +76,7 @@
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-3">
                     <div *ngIf="thereAreDuels">
-                        <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenged" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#challengedModal" (click)="selectImage(i)"/>
+                        <img src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenged" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#illustrationChallengedModal" (click)="selectImage(i)"/>
                     </div>
                     <div class="div_lvl_right">
                         <div class="Aligner div_lvl txt_lvl_left">
@@ -94,4 +90,8 @@
             <hr>
         </div>
     </div>
+    <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <div class="text-center loadimages"><strong>LOAD MORE DUELS</strong></div>
+    <br>
 </div>
+<!-- END ILLLUSTRATION DUELS -->

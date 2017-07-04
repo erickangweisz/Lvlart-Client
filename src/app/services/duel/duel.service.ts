@@ -17,4 +17,9 @@ export class DuelService {
         .map(res => res.json())
   }
 
+  public getAllDuelsByCategory(category: string) {
+    return this.http.get('http://localhost:3001/api/duels/category/' + category)
+        .map(res => res.json())
+  }
+
 }

@@ -4,23 +4,21 @@ import { UserService } from '../../services/user/user.service'
 import { ThemeService } from '../../services/theme/theme.service'
 
 @Component({
-  selector: 'app-gallery-duels',
-  templateUrl: './gallery-duels.component.html',
-  styleUrls: ['./gallery-duels.component.css'],
+  selector: 'app-duels-illustration',
+  templateUrl: './duels-illustration.component.html',
+  styleUrls: ['./duels-illustration.component.css'],
   providers: [ DuelService, UserService, ThemeService ]
 })
-export class GalleryDuelsComponent implements OnInit {
+export class DuelsIllustrationComponent implements OnInit {
 
   public imageModal = 0
 
   // duels variables
-  public duelsOrderByCreation = new Array
+  public duelsOrderByCategory = new Array
   public duelsId = new Array
   public thereAreDuels = false
   public likesUserChallenged = new Array
   public likesUserChallenger = new Array
-  public idImageChallenged = new Array
-  public idImageChallenger = new Array
 
   // users variables
   public usersChallengedId = new Array
@@ -40,27 +38,22 @@ export class GalleryDuelsComponent implements OnInit {
               private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.getXduelsOrderByCreation(3)
+    this.getAllDuelsByCategory('illustration')
   }
 
-  getXduelsOrderByCreation(number: number) {
-    this.duelService.getXduelsOrderByCreation(number).subscribe(res => {
-      this.duelsOrderByCreation = res['duels']
-      let lengthDuels = this.duelsOrderByCreation.length
+  getAllDuelsByCategory(category: string) {
+    this.duelService.getAllDuelsByCategory(category).subscribe(res => {
+      this.duelsOrderByCategory = res['duels']
+      let lengthDuels = this.duelsOrderByCategory.length
       for (let i=0; i<lengthDuels; i++) {
-        this.duelsId[i] = this.duelsOrderByCreation[i]['_id']
-        this.themesId[i] = this.duelsOrderByCreation[i]['id_theme']
+        this.duelsId[i] = this.duelsOrderByCategory[i]['_id']
+        this.themesId[i] = this.duelsOrderByCategory[i]['id_theme']
 
-        // load atributtes in arrays
-        this.usersChallengedId[i] = this.duelsOrderByCreation[i]['id_user_challenged']
-        this.usersChallengerId[i] = this.duelsOrderByCreation[i]['id_user_challenger']
-        console.log(this.usersChallengedId[i])
+        this.usersChallengedId[i] = this.duelsOrderByCategory[i]['id_user_challenged']
+        this.usersChallengerId[i] = this.duelsOrderByCategory[i]['id_user_challenger']
 
-        this.likesUserChallenged[i] = this.duelsOrderByCreation[i]['likes_user_challenged']
-        this.likesUserChallenger[i] = this.duelsOrderByCreation[i]['likes_user_challenger']
-
-        this.idImageChallenged[i] = this.duelsOrderByCreation[i]['id_image_challenged']
-        this.idImageChallenger[i] = this.duelsOrderByCreation[i]['id_image_challenger']
+        this.likesUserChallenged[i] = this.duelsOrderByCategory[i]['likes_user_challenged']
+        this.likesUserChallenger[i] = this.duelsOrderByCategory[i]['likes_user_challenger']
 
         this.thereAreDuels = true
 
