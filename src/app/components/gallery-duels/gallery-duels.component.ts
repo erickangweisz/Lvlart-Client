@@ -54,13 +54,12 @@ export class GalleryDuelsComponent implements OnInit {
         // load atributtes in arrays
         this.usersChallengedId[i] = this.duelsOrderByCreation[i]['id_user_challenged']
         this.usersChallengerId[i] = this.duelsOrderByCreation[i]['id_user_challenger']
-        console.log(this.usersChallengedId[i])
 
         this.likesUserChallenged[i] = this.duelsOrderByCreation[i]['likes_user_challenged']
         this.likesUserChallenger[i] = this.duelsOrderByCreation[i]['likes_user_challenger']
 
-        this.idImageChallenged[i] = this.duelsOrderByCreation[i]['id_image_challenged']
         this.idImageChallenger[i] = this.duelsOrderByCreation[i]['id_image_challenger']
+        this.idImageChallenged[i] = this.duelsOrderByCreation[i]['id_image_challenged']
 
         this.thereAreDuels = true
 

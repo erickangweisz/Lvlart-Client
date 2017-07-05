@@ -4,12 +4,12 @@ import { UserService } from '../../services/user/user.service'
 import { ThemeService } from '../../services/theme/theme.service'
 
 @Component({
-  selector: 'app-duels-illustration',
-  templateUrl: './duels-illustration.component.html',
-  styleUrls: ['./duels-illustration.component.css'],
+  selector: 'app-duels-modeling',
+  templateUrl: './duels-modeling.component.html',
+  styleUrls: ['./duels-modeling.component.css'],
   providers: [ DuelService, UserService, ThemeService ]
 })
-export class DuelsIllustrationComponent implements OnInit {
+export class DuelsModelingComponent implements OnInit {
 
   public imageModal = 0
 
@@ -40,7 +40,7 @@ export class DuelsIllustrationComponent implements OnInit {
               private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.getAllDuelsByCategory('illustration')
+    this.getAllDuelsByCategory('modeling')
   }
 
   getAllDuelsByCategory(category: string) {

@@ -6,12 +6,12 @@
 
 #txt_visited {
     color: white;
-    margin-left: 0.5%;
+    margin-left: 0.2%;
     font-size: 28px;
     font-family: 'Fjalla One', sans-serif;
-    position: absolute;
-    top: 5px;
-    left: 27px;
+    position: relative;
+    top: -5px;
+    left: 0px;
 }
 
 .panel_body {

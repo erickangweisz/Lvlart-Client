@@ -1,5 +1,5 @@
 <!-- Modal challenger -->
-<div id="illustrationchallengerModal" class="modal fade" role="dialog">
+<div id="modelingchallengerModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content modal_img text-center" id="modal_img">
             <div class="modal-header" id="m_header">
@@ -12,8 +12,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div *ngIf="idImageChallenger.length > 0">
-                            <img *ngIf="idImageChallenger[imageModal] != null" src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenger" class="img-responsive pull-left" data-toggle="modal" data-target="#challengerModal" (click)="selectImage(imageModal)"/>
-                            <img *ngIf="idImageChallenger[imageModal] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left" data-toggle="modal" data-target="#challengerModal" (click)="selectImage(imageModal)"/>
+                            <img *ngIf="idImageChallenger[imageModal] != null" src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenger" class="img-responsive pull-left" data-toggle="modal" data-target="#modelingchallengerModal" (click)="selectImage(imageModal)"/>
+                            <img *ngIf="idImageChallenger[imageModal] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left" data-toggle="modal" data-target="#modelingchallengerModal" (click)="selectImage(imageModal)"/>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
  <!-- End Modal challenger -->
  
  <!-- Modal challenged -->
- <div id="illustrationchallengedModal" class="modal fade" role="dialog">
+ <div id="modelingchallengedModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content modal_img text-center" id="modal_img">
             <div class="modal-header" id="m_header">
@@ -37,8 +37,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div *ngIf="idImageChallenged.length > 0">
-                            <img *ngIf="idImageChallenged[imageModal] != null" src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenged" class="img-responsive pull-left" data-toggle="modal" data-target="#challengedModal" (click)="selectImage(imageModal)"/>
-                            <img *ngIf="idImageChallenged[imageModal] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left" data-toggle="modal" data-target="#challengedModal" (click)="selectImage(imageModal)"/>
+                            <img *ngIf="idImageChallenged[imageModal] != null" src="http://localhost:3001/api/duel/{{ duelsId[imageModal] }}/getimagechallenged" class="img-responsive pull-left" data-toggle="modal" data-target="#modelingchallengedModal" (click)="selectImage(imageModal)"/>
+                            <img *ngIf="idImageChallenged[imageModal] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left" data-toggle="modal" data-target="#modelingchallengedModal" (click)="selectImage(imageModal)"/>
                         </div>
                     </div>
                 </div>
@@ -48,10 +48,10 @@
  </div>
  <!-- End Modal challenged -->
 
-<!-- ILLUSTRATION DUELS -->
+<!-- MODELING DUELS -->
 <div class="panel panel-default">
     <div class="panel-heading panel_heading">
-        <span id="txt_visited">ILLUSTRATION DUELS <i class="fa fa-paint-brush pull-left" aria-hidden="true"></i></span>
+        <span id="txt_visited">MODELING DUELS <i class="fa fa-cube pull-left" aria-hidden="true"></i></span>
     </div>
     <br>
     <div class="panel-body panel_body">
@@ -59,8 +59,8 @@
             <div class="row">
                 <div class="col-md-2 col-sm-3 col-xs-3">
                     <div *ngIf="idImageChallenger.length > 0">
-                        <img *ngIf="idImageChallenger[i] != null" src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenger" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#illustrationchallengerModal" (click)="selectImage(i)"/>
-                        <img *ngIf="idImageChallenger[i] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#illustrationchallengerModal" (click)="selectImage(i)"/>
+                        <img *ngIf="idImageChallenger[i] != null" src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenger" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#modelingchallengerModal" (click)="selectImage(i)"/>
+                        <img *ngIf="idImageChallenger[i] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-left img_mar" data-toggle="modal" data-target="#modelingchallengerModal" (click)="selectImage(i)"/>
                     </div>
                     <div class="div_lvl_left">
                         <div class="Aligner div_lvl txt_lvl_left">
@@ -85,8 +85,8 @@
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-3">
                     <div *ngIf="idImageChallenged.length > 0">
-                        <img *ngIf="idImageChallenged[i] != null" src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenged" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#illustrationchallengedModal" (click)="selectImage(i)"/>
-                        <img *ngIf="idImageChallenged[i] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#illustrationchallengedModal" (click)="selectImage(i)"/>
+                        <img *ngIf="idImageChallenged[i] != null" src="http://localhost:3001/api/duel/{{ duelsId[i] }}/getimagechallenged" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#modelingchallengedModal" (click)="selectImage(i)"/>
+                        <img *ngIf="idImageChallenged[i] == null" src="http://localhost:3001/images/noimage" class="img-responsive pull-right img_mar" data-toggle="modal" data-target="#modelingchallengedModal" (click)="selectImage(i)"/>
                     </div>
                     <div class="div_lvl_right">
                         <div class="Aligner div_lvl txt_lvl_left">
@@ -104,4 +104,4 @@
     <div class="text-center loadimages"><strong>LOAD MORE DUELS</strong></div>
     <br>
 </div>
-<!-- END ILLLUSTRATION DUELS -->
+<!-- END MODELING DUELS -->

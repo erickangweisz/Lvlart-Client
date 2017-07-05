@@ -20,11 +20,11 @@ export class AsideComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByCategory(12, 'illustration')
-    this.getXusersOrderByCategory(12, 'photography')
-    this.getXusersOrderByCategory(12, 'modeling')
+    this.getXusersOrderByCategory(14, 'illustration')
+    this.getXusersOrderByCategory(14, 'photography')
+    this.getXusersOrderByCategory(14, 'modeling')
 
-    this.getXusersOrderByVictories(12)
+    this.getXusersOrderByVictories(14)
   }
 
   getXusersOrderByCategory(number: number, category: string) {

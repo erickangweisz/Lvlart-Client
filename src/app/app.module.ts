@@ -38,7 +38,8 @@ import { ProfileGalleryComponent } from './components/profile-gallery/profile-ga
 import { ProfileDuelsComponent } from './components/profile-duels/profile-duels.component'
 import { ProfileCommentsComponent } from './components/profile-comments/profile-comments.component'
 import { DuelsIllustrationComponent } from './components/duels-illustration/duels-illustration.component';
-import { DuelsPhotographyComponent } from './components/duels-photography/duels-photography.component'
+import { DuelsPhotographyComponent } from './components/duels-photography/duels-photography.component';
+import { DuelsModelingComponent } from './components/duels-modeling/duels-modeling.component'
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { DuelsPhotographyComponent } from './components/duels-photography/duels-
     ProfileDuelsComponent,
     ProfileCommentsComponent,
     DuelsIllustrationComponent,
-    DuelsPhotographyComponent
+    DuelsPhotographyComponent,
+    DuelsModelingComponent
   ],
   imports: [
     BrowserModule,

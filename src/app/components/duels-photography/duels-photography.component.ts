@@ -19,6 +19,8 @@ export class DuelsPhotographyComponent implements OnInit {
   public thereAreDuels = false
   public likesUserChallenged = new Array
   public likesUserChallenger = new Array
+  public idImageChallenged = new Array
+  public idImageChallenger = new Array
 
   // users variables
   public usersChallengedId = new Array
@@ -54,6 +56,9 @@ export class DuelsPhotographyComponent implements OnInit {
 
         this.likesUserChallenged[i] = this.duelsOrderByCategory[i]['likes_user_challenged']
         this.likesUserChallenger[i] = this.duelsOrderByCategory[i]['likes_user_challenger']
+
+        this.idImageChallenger[i] = this.duelsOrderByCategory[i]['id_image_challenger']
+        this.idImageChallenged[i] = this.duelsOrderByCategory[i]['id_image_challenged']
 
         this.thereAreDuels = true
 
