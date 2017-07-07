@@ -23,7 +23,6 @@ export class RankingFirstComponent implements OnInit {
     this.userService.getXusersOrderByScore(number).subscribe(res => {
       this.bestuser = res['users'][0]
       this.thereAreUser = true
-      console.log(this.bestuser)
     })
   }
 

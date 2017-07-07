@@ -6,7 +6,6 @@
 
 #txt_visited {
     color: white;
-    margin-left: 2.5%;
     font-size: 28px;
     font-family: 'Fjalla One', sans-serif;
     position: absolute;
@@ -19,3 +18,4 @@
     border-color: #FFA500 !important;
     padding: 0px;
 }
+

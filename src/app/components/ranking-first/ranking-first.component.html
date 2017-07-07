@@ -2,8 +2,9 @@
 <div class="panel panel-default event without_margin">
   <div class="panel-body">
     <div class="rsvp col-xs-2 col-sm-2">
-      <i>1</i>
-      <i class="font_fjalla">position</i>
+      <br>
+      <p class="font_fjalla number">1</p>
+      <p class="font_fjalla hidden-xs position">position</p>
       <div class="hidden-xs">
         <span class="fa fa-thumbs-up fa-2x"></span>
         <span class="fa fa-thumbs-down fa-2x"></span>
@@ -11,7 +12,7 @@
     </div>
     <div class="info col-xs-8 col-sm-7">
       <div *ngIf="thereAreUser">
-        <span class="font_fjalla f_size"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> {{ bestuser.username }}</span>
+        <span class="font_fjalla f_size"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a href="#">{{ bestuser.username }}</a></span>
       </div>
       <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
       <div class="hidden-xs">
@@ -25,13 +26,17 @@
             <div role="tabpanel" class="tab-pane" id="profile">
               <div class="row">
                 <div class="col-md-6">
-                  <strong><i class="fa fa-star-o" aria-hidden="true"></i> score: </strong>{{ bestuser.score }}<br>
-                  <strong><i class="fa fa-eye" aria-hidden="true"></i> visits: </strong>{{ bestuser.visits }}<br>
-                  <strong><i class="fa fa-envelope-o" aria-hidden="true"></i> email: </strong>{{ bestuser.email }}
+                  <div *ngIf="thereAreUser">
+                    <strong><i class="fa fa-star-o" aria-hidden="true"></i> score: </strong>{{ bestuser.score }}<br>
+                    <strong><i class="fa fa-eye" aria-hidden="true"></i> visits: </strong>{{ bestuser.visits }}<br>
+                    <strong><i class="fa fa-envelope-o" aria-hidden="true"></i> email: </strong>{{ bestuser.email }}
+                  </div>
                 </div>
                 <div class="col-md-6">
-                  <strong><i class="fa fa-chevron-up" aria-hidden="true"></i> victories: </strong>{{ bestuser.n_victories }}<br>
-                  <strong><i class="fa fa-chevron-down" aria-hidden="true"></i> defeats: </strong>{{ bestuser.n_defeats }}
+                  <div *ngIf="thereAreUser">
+                    <strong><i class="fa fa-chevron-up" aria-hidden="true"></i> victories: </strong>{{ bestuser.n_victories }}<br>
+                    <strong><i class="fa fa-chevron-down" aria-hidden="true"></i> defeats: </strong>{{ bestuser.n_defeats }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -40,9 +45,12 @@
     </div>
     <div class="author col-xs-2 col-sm-3">
         <div class="profile-image hidden-xs">
+          <div *ngIf="thereAreUser">
             <img src="http://localhost:3001/api/user/{{ bestuser._id }}/avatar"/>
+          </div>
         </div>
         <div class="profile hidden-xs">
+          <div *ngIf="thereAreUser">
             <br>
             <span class="font_fjalla">{{ bestuser.firstname | uppercase }} {{ bestuser.lastname | uppercase }}</span><br>
             <span class="font_fjalla">CATEGORY: </span>{{ bestuser.categories }}<br>
@@ -53,6 +61,7 @@
               <a href="{{ bestuser.profile_pinterest }}" target="_blank"><i class="fa fa-pinterest-square  fa-2x col-xs-3"></i></a>
               <a href="http://www.github.com/erickangweisz" target="_blank"><i class="fa fa-github-square fa-2x col-xs-3"></i></a>
             </div>
+          </div>
         </div>
     </div>
   </div>

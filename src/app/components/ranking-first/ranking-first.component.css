@@ -1,6 +1,6 @@
 .event .panel-body {
-  background: #FFFAC2;
-  border: 1px solid #FFA500;
+  background: whitesmoke;
+  border: 1px solid whitesmoke;
   padding:0;
   margin:0;
   height:86px;
@@ -47,8 +47,11 @@
 .event .rsvp span:first-of-type {
   border-right: 1px solid white;
 }
-.event .rsvp span:hover {
-  color: #FFA500;
+.fa-thumbs-up:hover {
+  color: chartreuse;
+}
+.fa-thumbs-down:hover {
+  color: red;
 }
 
 .event .info {
@@ -177,4 +180,16 @@
 .without_margin {
   margin: 0px !important;
   padding: 0px !important;
+}
+
+.number {
+  font-size: 50px; 
+  margin: -5px; 
+  padding: 0px
+}
+
+.position {
+  font-size: 25px; 
+  position: relative; 
+  top: -8px
 }

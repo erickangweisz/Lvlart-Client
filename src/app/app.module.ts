@@ -44,6 +44,9 @@ import { DuelsPhotographyComponent } from './components/duels-photography/duels-
 import { DuelsModelingComponent } from './components/duels-modeling/duels-modeling.component'
 import { RankingFirstComponent } from './components/ranking-first/ranking-first.component'
 import { RankingListallComponent } from './components/ranking-listall/ranking-listall.component'
+import { RankingIllustrationComponent } from './components/ranking-illustration/ranking-illustration.component';
+import { RankingPhotographyComponent } from './components/ranking-photography/ranking-photography.component';
+import { RankingModelingComponent } from './components/ranking-modeling/ranking-modeling.component'
 
 @NgModule({
   declarations: [
@@ -83,7 +86,10 @@ import { RankingListallComponent } from './components/ranking-listall/ranking-li
     DuelsModelingComponent,
     RankingFirstComponent,
     CapitalizePipe,
-    RankingListallComponent
+    RankingListallComponent,
+    RankingIllustrationComponent,
+    RankingPhotographyComponent,
+    RankingModelingComponent
   ],
   imports: [
     BrowserModule,

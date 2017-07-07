@@ -1,0 +1,42 @@
+<div class="panel panel-default widget">
+    <div class="panel-body">
+        <ul class="list-group">
+            <div *ngIf="thereAreUsers">
+                <div *ngFor="let user of bestphotography; let i = index">
+                    <div *ngIf="i < 5">
+                        <li class="list-group-item c_lightorange">
+                            <div class="row">
+                                <div class="col-md-2 c_darkgrey">
+                                    <p class="number_position text-center">{{ i + 1 }}</p>
+                                    <p class="text-center text_position">position</p>
+                                </div>
+                                <div class="col-xs-6 col-md-7">
+                                    <div>
+                                        <a href="#" class="text_username">{{ bestphotography[i].username }}</a>
+                                        <div class="comment-text">
+                                            <i class="fa fa-eye" aria-hidden="true"></i> visits: {{ bestphotography[i].visits }}
+                                        </div>
+                                    </div>
+                                    <div class="comment-text">
+                                        <i class="fa fa-star-o" aria-hidden="true"></i> score: {{ bestphotography[i].score }}
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-md-1">
+                                    <img src="http://localhost:3001/api/user/{{ bestphotography[i]._id }}/avatar" class="img-circle img-responsive m_top img_avatar" alt=""/>
+                                </div>
+                                <div class="co-md-2 m_top">
+                                    <span class="font_fjalla">{{ bestphotography[i].firstname | uppercase }}{{ bestphotography[i].lastname | uppercase }}</span><br>
+                                    <span class="font_fjalla">CATEGORY: {{ bestphotography[i].category }}</span><br>
+                                    <span class="font_fjalla">LVL: {{ bestphotography[i].score | level }}</span>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <!--<a href="#" class="btn btn-warning btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>-->
+    </div>
+</div>
+   
+
