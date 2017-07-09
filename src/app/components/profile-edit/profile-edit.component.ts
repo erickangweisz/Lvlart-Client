@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { UserService } from '../../services/user/user.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-profile-edit',
@@ -13,7 +14,8 @@ export class ProfileEditComponent implements OnInit {
   user: any
   thereAreUser = false
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+              private router: Router) {}
 
   ngOnInit() {
     this.getUserById(this.idUser)
@@ -50,13 +52,35 @@ export class ProfileEditComponent implements OnInit {
   }
 
   onChangeAvatar(event) {
-    var fileAvatar = event.srcElement.files;
-    console.log(fileAvatar);
+    var fileAvatar = event.target.files[0]
+    console.log(fileAvatar)
+    //this.uploadAvatar(fileAvatar)
   }
 
   onChangeImgHead(event) {
-    var fileImgHead = event.srcElement.files;
-    console.log(fileImgHead);
+    var fileImgHead = event.srcElement.files
+    console.log(fileImgHead)
+  }
+
+  uploadAvatar(body: any) {
+    this.userService.uploadAvatar(this.idUser, body).subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  updateUser() {
+    let body = {
+      'firstname': (<HTMLInputElement> document.getElementById('firstname')).value,
+      'lastname': (<HTMLInputElement> document.getElementById('lastname')).value,
+      'profile_facebook': (<HTMLInputElement> document.getElementById('profile_facebook')).value,
+      'profile_twitter': (<HTMLInputElement> document.getElementById('profile_twitter')).value,
+      'profile_pinterest': (<HTMLInputElement> document.getElementById('profile_pinterest')).value 
+    }
+
+    this.userService.updateUser(this.idUser, body).subscribe(res => {
+      this.router.navigate(['app-profile/view'])
+    })
+
   }
 
 }

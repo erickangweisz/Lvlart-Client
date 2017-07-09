@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="passwordModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -35,7 +35,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="firstname" [(ngModel)]="user.firstname" id="firstname" placeholder="Enter your firstname" />
+                              <input #i_firstname type="text" class="form-control" name="firstname" [(ngModel)]="user.firstname" id="firstname" placeholder="Enter your firstname" />
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="lastname" [(ngModel)]="user.lastname" id="lastname" placeholder="Enter your lastname" />
+                              <input #i_lastname type="text" class="form-control" name="lastname" [(ngModel)]="user.lastname" id="lastname" placeholder="Enter your lastname" />
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-facebook-square" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="profile_facebook" [(ngModel)]="user.profile_facebook" id="profile_facebook" placeholder="Enter your facebook profile" />
+                              <input #i_pfacebook type="text" class="form-control" name="profile_facebook" [(ngModel)]="user.profile_facebook" id="profile_facebook" placeholder="Enter your facebook profile" />
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-twitter-square" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="profile_twitter" [(ngModel)]="user.profile_twitter" id="profile_twitter" placeholder="Enter your twitter profile" />
+                              <input #i_ptwitter type="text" class="form-control" name="profile_twitter" [(ngModel)]="user.profile_twitter" id="profile_twitter" placeholder="Enter your twitter profile" />
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pinterest-square" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="profile_pinterest" [(ngModel)]="user.profile_pinterest" id="profile_pinterest" placeholder="Enter your pinterest profile" />
+                              <input #i_ppinterest type="text" class="form-control" name="profile_pinterest" [(ngModel)]="user.profile_pinterest" id="profile_pinterest" placeholder="Enter your pinterest profile" />
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                             <div *ngIf="thereAreUser">
-                              <input type="text" class="form-control" name="email" [(ngModel)]="user.email" id="email" placeholder="Enter your Email" />
+                              <input #i_email type="text" class="form-control" name="email" [(ngModel)]="user.email" id="email" placeholder="Enter your Email" />
                             </div>
                         </div>
                     </div>
@@ -110,8 +110,8 @@
                 <br>
                 <hr>
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">change password</button>
-                <button type="submit" class="btn btn-success pull-right">edit profile</button>
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#passwordModal">change password</button>
+                <button type="button" class="btn btn-success pull-right" (click)="updateUser()">edit profile</button>
             </form>
         </div>
     </div>
