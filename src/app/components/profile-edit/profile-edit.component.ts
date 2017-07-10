@@ -80,7 +80,21 @@ export class ProfileEditComponent implements OnInit {
     this.userService.updateUser(this.idUser, body).subscribe(res => {
       this.router.navigate(['app-profile/view'])
     })
+  }
 
+  changePassword(oldpass: string, newpass: string, repeatnewpass: string) {
+    if (oldpass == this.user.password && newpass == repeatnewpass) {
+      let body = {
+        'password': newpass
+      }
+      this.userService.updateUser(this.idUser, body).subscribe(res => {
+        this.router.navigate(['app-profile/view'])
+      })
+    } else {
+      // handler error
+      console.log('ERROR')
+    }
+    
   }
 
 }

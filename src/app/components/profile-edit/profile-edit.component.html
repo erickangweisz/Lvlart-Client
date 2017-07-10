@@ -1,21 +1,20 @@
-<!-- Modal -->
+<!-- Modal Change Password -->
 <div id="passwordModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header m_header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title txt_header_modal">Change password</h4>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" placeholder="insert your password">
+        <input #i_oldpass type="password" class="form-control" placeholder="insert your password">
         <hr>
-        <input type="text" class="form-control" placeholder="insert your new password">
-        <input type="text" class="form-control" placeholder="repeat your new password">
+        <input #i_newpass type="password" class="form-control" placeholder="insert your new password">
+        <input #i_repeatnewpass type="password" class="form-control" placeholder="repeat your new password">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal">change password</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="changePassword(i_oldpass.value, i_newpass.value, i_repeatnewpass.value)">change password</button>
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@ export class SignupFormComponent implements OnInit {
     this.loginService.signup(value.username, value.password, value.firstname, value.lastname, value.birthday,
                              value.category, value.profile_facebook, value.profile_twitter,
                              value.profile_pinterest, value.email).subscribe(res => { 
-                               this.router.navigate(['signin-form']) 
+                               this.router.navigate(['home']) 
                              })
   }
 
