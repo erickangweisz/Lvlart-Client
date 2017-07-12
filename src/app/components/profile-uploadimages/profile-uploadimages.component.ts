@@ -7,8 +7,16 @@ import { Component, OnInit } from '@angular/core'
 })
 export class ProfileUploadimagesComponent implements OnInit {
 
+  public userId: string 
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userId = localStorage.getItem('user_id')
+  }
+  
+  imageUploaded($event) {
+    console.log(event)
+  }
 
 }

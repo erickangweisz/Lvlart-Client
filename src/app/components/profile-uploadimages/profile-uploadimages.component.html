@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <p>profile-uploadimages works!</p>
+    <div class="col-md-8 col-md-offset-2">
+      <br><br><br><br><br>
+      <div class="panel panel-default">
+        <div class="panel-heading panel_heading">
+          <span id="txt_visited">
+            <i class="fa fa-upload" aria-hidden="true"></i> UPLOAD IMAGES
+        </span>
+        </div>
+        <div class="panel-body">
+          <h3>Upload images in your gallery!</h3>
+          <br>
+          <image-upload (onFileUploadFinish)="imageUploaded($event)"></image-upload>
+          <br>
+        </div>
+      </div>
+      <br><br><br><br><br><br>
     </div>
   </div>
 </div>

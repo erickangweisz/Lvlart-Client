@@ -58,7 +58,7 @@ export class ProfileEditComponent implements OnInit {
   }
 
   onChangeImgHead(event) {
-    var fileImgHead = event.srcElement.files
+    var fileImgHead = event.srcElement.files[0]
     console.log(fileImgHead)
   }
 
@@ -94,7 +94,6 @@ export class ProfileEditComponent implements OnInit {
       // handler error
       console.log('ERROR')
     }
-    
   }
 
 }
