@@ -9,28 +9,28 @@
                 <hr class="margin_hr">
                 <ol class="ol_margin">
                     <li *ngFor="let user of illustrationUsers">
-                        <a href="#">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
+                        <a [routerLink]="['app-profile/profileuser', user._id]">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
                     </li>
                 </ol><br>
                 <strong>Photography</strong><i class="fa fa-camera-retro pull-right" aria-hidden="true"></i><br>
                 <hr class="margin_hr">
                 <ol class="ol_margin">
                     <li *ngFor="let user of photographyUsers">
-                        <a href="#">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
+                        <a [routerLink]="['app-profile/profileuser', user._id]">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
                     </li>
                 </ol><br>
                 <strong>3D Modeling</strong><i class="fa fa-cube pull-right" aria-hidden="true"></i><br>
                 <hr class="margin_hr">
                 <ol class="ol_margin">
                     <li *ngFor="let user of modelingUsers">
-                        <a href="#">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
+                        <a [routerLink]="['app-profile/profileuser', user._id]">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
                     </li>
                 </ol><br>
                 <strong>Duels</strong><i class="fa fa-handshake-o pull-right" aria-hidden="true"></i><br>
                 <hr class="margin_hr">
                 <ol class="ol_margin">
                     <li *ngFor="let user of victoriesUsers">
-                        <a href="#">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
+                        <a [routerLink]="['app-profile/profileuser', user._id]">{{ user.username | uppercase }}</a> ... <span class="hidden-md pull-right">{{ user.score|number:'1.2' }}</span><br>
                     </li>
                 </ol>
             </div>

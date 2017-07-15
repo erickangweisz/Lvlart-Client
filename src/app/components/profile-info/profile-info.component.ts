@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { UserService } from '../../services/user/user.service'
+import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-profile-info',
@@ -9,7 +10,7 @@ import { UserService } from '../../services/user/user.service'
 })
 export class ProfileInfoComponent implements OnInit {
 
-  public userid = localStorage.getItem('user_id')
+  public userid: string
   public username: string
   public score: number
   public experience: number
@@ -18,10 +19,21 @@ export class ProfileInfoComponent implements OnInit {
   public thereAreUser = false
   public urlImageInfo = ""
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getUserById(localStorage.getItem('user_id'))
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+        this.userid = params['userid']
+      })
+      
+    if (this.userid == null)
+      this.userid = localStorage.getItem('user_id')
+    else
+      this.userid = localStorage.getItem('userid_lastvisited')
+
+    this.getUserById(this.userid)
   }
 
   getUserById(userId: string) {
@@ -29,7 +41,7 @@ export class ProfileInfoComponent implements OnInit {
       this.username = res['user'].username
       this.score = res['user'].score
       this.experience = res['user'].experience
-      this.category = res['user'].categories
+      this.category = res['user'].category
       
       this.getUrlImageInfo()
     })

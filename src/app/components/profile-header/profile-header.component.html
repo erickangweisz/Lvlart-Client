@@ -3,7 +3,12 @@
         <!-- jumbotron -->
         <div class="jumbotron" style="padding: 0px !important; ">
             <button class="btn btn-default btn_loadImage"><i class="fa fa-file-image-o" aria-hidden="true"></i></button>
-            <img src="http://localhost:3001/api/user/{{ userid }}/imghead" alt="First slide" style="width:100%;">
+            <div *ngIf="imghead != null">
+                <img src="http://localhost:3001/api/user/{{ userid }}/imghead" alt="First slide" style="width:100%;">
+            </div>
+            <div *ngIf="imghead == null">
+                <img src="http://localhost:3001/images/noheader" alt="First slide" style="width:100%;">
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-4">
@@ -21,8 +26,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- img photo -->
-                        <img src="http://localhost:3001/api/user/{{ userid }}/avatar" alt="image profile" class="img-thumbnail img_photo hidden-xs hidden-sm pull-left" />
+                        <div *ngIf="avatar != null">
+                            <!-- img photo -->
+                            <img src="http://localhost:3001/api/user/{{ userid }}/avatar" alt="image profile" class="img-thumbnail img_photo hidden-xs hidden-sm pull-left" />
+                        </div>
+                        <div *ngIf="avatar == null">
+                            <img src="{{ urlImageNoAvatar }}" alt="image profile" class="img-thumbnail img_photo hidden-xs hidden-sm pull-left" />
+                        </div>
                     </div>
                 </div>
             </div>

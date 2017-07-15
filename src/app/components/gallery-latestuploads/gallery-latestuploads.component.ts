@@ -12,13 +12,11 @@ export class GalleryLatestuploadsComponent implements OnInit {
 
   public imagesOrderByLatestUpload: Array<string>
   public imagesId = new Array
-
+  public thereAreImages = false
+  
   public usernames = new Array
   public usersId = new Array
-
-  public thereAreImages = false
   public thereAreUsers = false
-
   public scoreUsers = new Array
 
   public imageModal = 0

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { DuelService } from '../../services/duel/duel.service'
 import { UserService } from '../../services/user/user.service'
 import { ThemeService } from '../../services/theme/theme.service'
+import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-profile-duels',
@@ -11,7 +12,7 @@ import { ThemeService } from '../../services/theme/theme.service'
 })
 export class ProfileDuelsComponent implements OnInit {
 
-  public userId = localStorage.getItem('user_id')
+  public userid: string
   public duels = new Array
 
   // duels variables
@@ -37,10 +38,21 @@ export class ProfileDuelsComponent implements OnInit {
 
   constructor(private duelService: DuelService, 
               private userService: UserService,
-              private themeService: ThemeService) {}
+              private themeService: ThemeService,
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getAllDuelsByUserId(this.userId)
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+        this.userid = params['userid']
+      })
+      
+    if (this.userid == null)
+      this.userid = localStorage.getItem('user_id')
+    else
+      this.userid = localStorage.getItem('userid_lastvisited')
+
+    this.getAllDuelsByUserId(this.userid)
   }
 
   getAllDuelsByUserId(userId: string) {

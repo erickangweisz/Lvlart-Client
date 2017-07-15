@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { CommentService } from '../../services/comment/comment.service'
 import { UserService } from '../../services/user/user.service'
+import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-profile-comments',
@@ -10,7 +11,7 @@ import { UserService } from '../../services/user/user.service'
 })
 export class ProfileCommentsComponent implements OnInit {
 
-  public userId = localStorage.getItem('user_id')
+  public userid: string
   public comments = new Array
 
   public textComment = new Array
@@ -20,10 +21,21 @@ export class ProfileCommentsComponent implements OnInit {
   public senderUsernames = new Array
 
   constructor(private commentService: CommentService,
-              private userService: UserService) {}
+              private userService: UserService,
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getCommentsByIdReceiver(this.userId)
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+        this.userid = params['userid']
+      })
+      
+    if (this.userid == null)
+      this.userid = localStorage.getItem('user_id')
+    else
+      this.userid = localStorage.getItem('userid_lastvisited')
+
+    this.getCommentsByIdReceiver(this.userid)
   }
 
   getCommentsByIdReceiver(userId: string) {

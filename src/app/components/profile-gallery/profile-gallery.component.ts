@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ImageService } from '../../services/image/image.service'
+import { ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-profile-gallery',
@@ -9,7 +10,7 @@ import { ImageService } from '../../services/image/image.service'
 })
 export class ProfileGalleryComponent implements OnInit {
 
-  public userId = localStorage.getItem('user_id')
+  public userid: string
   public images = new Array
   public imagesId = new Array
   public imagesTitle = new Array
@@ -19,10 +20,21 @@ export class ProfileGalleryComponent implements OnInit {
 
   public thereAreImages = false
 
-  constructor(private imageService: ImageService) {}
+  constructor(private imageService: ImageService,
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getAllImagesByUserId(this.userId)
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+        this.userid = params['userid']
+      })
+      
+    if (this.userid == null)
+      this.userid = localStorage.getItem('user_id')
+    else
+      this.userid = localStorage.getItem('userid_lastvisited')
+
+    this.getAllImagesByUserId(this.userid)
   }
 
   getAllImagesByUserId(userId: string) {

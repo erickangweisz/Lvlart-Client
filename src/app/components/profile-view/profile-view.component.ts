@@ -9,13 +9,14 @@ import { UserService } from '../../services/user/user.service'
 })
 export class ProfileViewComponent implements OnInit {
 
-  public userid = localStorage.getItem('user_id')
+  public userid: string
   public visits: number
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getUserById(localStorage.getItem('user_id'))
+    this.userid = localStorage.getItem('user_id')
+    this.getUserById(this.userid)
   }
 
   getUserById(userId: string) {

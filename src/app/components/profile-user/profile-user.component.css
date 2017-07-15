@@ -1,0 +1,23 @@
+.div_visits {
+    position: relative;
+    width: 210px;
+    height: 38px;
+    margin-left: 17%;
+    margin-top: 13%;
+    background: grey;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    /* For IE8 and earlier */
+    border-radius: 18px;
+    z-index: -1;
+}
+
+.txt_visits {
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    left: 28%;
+    text-shadow: 2px 2px black;
+}
