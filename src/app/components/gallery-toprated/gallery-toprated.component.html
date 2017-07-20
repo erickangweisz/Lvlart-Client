@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-9">
                     <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[0] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ usernames[0] }}</a></span><br>
+                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[0]]"> {{ usernames[0] }}</a></span><br>
                     <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreUsers[0] }}</span><br>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-md-9">
                     <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[1] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ usernames[1] }}</a></span><br>
+                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[1]]"> {{ usernames[1] }}</a></span><br>
                     <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreUsers[1]  }}</span><br>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-9">
                     <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[2] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ usernames[2] }}</a></span><br>
+                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[2]]"> {{ usernames[2] }}</a></span><br>
                     <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreUsers[2] }}</span><br>
                 </div>
             </div>

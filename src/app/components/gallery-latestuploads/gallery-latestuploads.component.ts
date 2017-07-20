@@ -36,8 +36,18 @@ export class GalleryLatestuploadsComponent implements OnInit {
         this.usersId[i] = this.imagesOrderByLatestUpload[i]['id_user']
         this.thereAreImages = true
 
-        this.getUserById(this.usersId[i]) // call all the users *
+        //this.getUserById(this.usersId[i]) // call all the users *
       }
+      // Temporary solution
+      this.usersId.reverse() 
+      this.getUserById(this.usersId[0])
+      this.getUserById(this.usersId[1])
+      this.getUserById(this.usersId[2])
+      this.getUserById(this.usersId[3])
+      this.getUserById(this.usersId[4])
+      this.getUserById(this.usersId[5])
+      this.imagesId.reverse()
+      // End Temporary solution
     })
   }
 
