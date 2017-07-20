@@ -19,7 +19,7 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="text_title"><strong>{{ usersOrderByVisits['users'][0].username }}</strong></span>
+                                    <a [routerLink]="['../app-profile/profileuser', usersId[0]]" class="nonedecoration"><span class="text_title"><strong>{{ usersOrderByVisits['users'][0].username }}</strong></span></a>
                                 </div>
                             </h2>
                             <br>
@@ -42,7 +42,7 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span  class="text_title"><strong>{{ usersOrderByVisits['users'][1].username }}</strong></span>
+                                    <a [routerLink]="['../app-profile/profileuser', usersId[1]]" class="nonedecoration"><span  class="text_title"><strong>{{ usersOrderByVisits['users'][1].username }}</strong></span></a>
                                 </div>
                             </h2>
                             <br>
@@ -65,7 +65,7 @@
                         <div class="col-md-12 text-center">
                             <h2>
                                 <div *ngIf="thereAreUsers">
-                                    <span class="text_title"><strong>{{ usersOrderByVisits['users'][2].username }}</strong></span>
+                                    <a [routerLink]="['../app-profile/profileuser', usersId[2]]" class="nonedecoration"><span class="text_title"><strong>{{ usersOrderByVisits['users'][2].username }}</strong></span></a>
                                 </div>
                             </h2>
                             <br>

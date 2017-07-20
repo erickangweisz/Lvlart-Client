@@ -43,8 +43,8 @@
                     </div>
                     <div class="col-md-9">
                         <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i><strong> {{ titleImagesOrderByCategory[i] | uppercase }}</strong></span><br>
-                        <span><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ usernames[i] }}</a></span><br>
-                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImagesOrderByCategory[i] }}</span><br>
+                        <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['../app-profile/profileuser', userIdImagesOrderByCategory[i]]"> {{ usernames[i] }}</a></span><br>
+                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreUsers[i] }}</span><br>
                     </div>
                 </div>
             </div>

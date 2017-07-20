@@ -16,6 +16,7 @@ export class GalleryPhotographyComponent implements OnInit {
   public userIdImagesOrderByCategory = new Array
 
   public usernames = new Array
+  public scoreUsers = new Array
 
   public thereAreImages = false
   public imageModal = 0
@@ -34,15 +35,16 @@ export class GalleryPhotographyComponent implements OnInit {
         this.scoreImagesOrderByCategory.push(res['images'][i].score)
         this.userIdImagesOrderByCategory.push(res['images'][i].id_user)
 
-        this.getUserById(this.userIdImagesOrderByCategory[i])
-        this.thereAreImages = true
+        this.getUserById(this.userIdImagesOrderByCategory[i])  
       }
+      this.thereAreImages = true
     })
   }
 
   getUserById(userId: string) {
     this.userService.getUserById(userId).subscribe(res => {
       this.usernames.push(res['user'].username) // push usernames in array *
+      this.scoreUsers.push(res['user'].score)
     })
   }
 

@@ -102,3 +102,12 @@
     border-radius: 12px;
     color: gainsboro;
 }
+
+/* header links */
+.nonedecoration {
+    text-decoration: none;
+}
+
+a span strong:hover  {
+    color: ivory;
+}

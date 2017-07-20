@@ -13,6 +13,7 @@ export class GalleryTopratedComponent implements OnInit {
   public imagesOrderByScore = new Array
   public imagesTitles = new Array
   public imagesId = new Array
+  public scoreImages = new Array
 
   public usernames = new Array
   public usersId = new Array
@@ -37,6 +38,8 @@ export class GalleryTopratedComponent implements OnInit {
       for (let i=0; i<lengthImages; i++) {
         this.imagesId[i] = this.imagesOrderByScore[i]['_id']
         this.usersId[i] = this.imagesOrderByScore[i]['id_user']
+        this.scoreImages[i] = this.imagesOrderByScore[i]['score']
+
         this.imagesTitles[i] = this.imagesOrderByScore[i]['title']
         this.thereAreImages = true
 
