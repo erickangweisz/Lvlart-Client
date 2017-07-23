@@ -37,7 +37,7 @@
                     <div class="col-md-3">
                         <div class="Aligner div_lvl">
                             <div class="Aligner-item Aligner-item--top"></div>
-                            <div class="Aligner-item txt_num">1</div>
+                            <div class="Aligner-item txt_num">{{ scoreUsers[i] | level }}</div>
                             <div class="Aligner-item Aligner-item--bottom txt_lvl">LVL</div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
     </div>
     <hr class="without_margin">
     <br>
-    <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-warning btn-circle btn-lg center-block" (click)="loadMoreImages()"><i class="fa fa-plus" aria-hidden="true"></i></button>
     <div class="text-center loadimages"><strong>LOAD MORE IMAGES</strong></div>
     <br>
 </div>

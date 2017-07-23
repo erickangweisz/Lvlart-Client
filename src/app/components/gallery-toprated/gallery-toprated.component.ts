@@ -42,10 +42,9 @@ export class GalleryTopratedComponent implements OnInit {
         this.scoreImages[i] = this.imagesOrderByScore[i]['score']
 
         this.imagesTitles[i] = this.imagesOrderByScore[i]['title']
-        this.thereAreImages = true
-
         //this.getUserById(this.usersId[i]) // call all the users *
       }
+      this.thereAreImages = true
       // Temporary solution
       this.usersId.reverse()
       this.imagesId.reverse()
