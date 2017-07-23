@@ -24,11 +24,12 @@ export class GalleryTopratedComponent implements OnInit {
   public scoreUsers = new Array
 
   public imgModal = 0
+  public nUploadedImages = 3
 
   constructor(private imageService: ImageService, private userService: UserService) {}
 
   ngOnInit() {
-    this.getXimagesOrderByScore(3)
+    this.getXimagesOrderByScore(this.nUploadedImages)
   }
 
   getXimagesOrderByScore(number: number) {
@@ -45,11 +46,12 @@ export class GalleryTopratedComponent implements OnInit {
 
         //this.getUserById(this.usersId[i]) // call all the users *
       }
+      // Temporary solution
       this.usersId.reverse()
       this.imagesId.reverse()
-      this.getUserById(this.usersId[0])
-      this.getUserById(this.usersId[1])
-      this.getUserById(this.usersId[2])
+      for (let j=0; j<this.usersId.length; j++) {
+        this.getUserById(this.usersId[j])
+      } 
     })
   }
 
@@ -62,6 +64,10 @@ export class GalleryTopratedComponent implements OnInit {
 
   selectImage(i: number) {
     this.imgModal = i
+  }
+
+  loadMoreImages() {
+    this.getXimagesOrderByScore(this.nUploadedImages += 3)
   }
 
 }

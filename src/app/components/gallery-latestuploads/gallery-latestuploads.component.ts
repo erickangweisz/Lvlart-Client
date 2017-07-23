@@ -20,11 +20,12 @@ export class GalleryLatestuploadsComponent implements OnInit {
   public scoreUsers = new Array
 
   public imageModal = 0
+  public nUploadedImages = 6
 
   constructor(private imageService: ImageService, private userService: UserService) {}
 
   ngOnInit() {
-    this.getXimagesOrderByLatestUpload(6)
+    this.getXimagesOrderByLatestUpload(this.nUploadedImages)
   }
 
   getXimagesOrderByLatestUpload(number: number) {
@@ -36,18 +37,14 @@ export class GalleryLatestuploadsComponent implements OnInit {
         this.usersId[i] = this.imagesOrderByLatestUpload[i]['id_user']
         this.thereAreImages = true
 
-        //this.getUserById(this.usersId[i]) // call all the users *
+        this.getUserById(this.usersId[i]) // call all the users *
       }
       // Temporary solution
-      this.usersId.reverse() 
-      this.getUserById(this.usersId[0])
-      this.getUserById(this.usersId[1])
-      this.getUserById(this.usersId[2])
-      this.getUserById(this.usersId[3])
-      this.getUserById(this.usersId[4])
-      this.getUserById(this.usersId[5])
+      /*this.usersId.reverse() 
       this.imagesId.reverse()
-      // End Temporary solution
+      for (let j=0; j<this.usersId.length; j++) {
+        this.getUserById(this.usersId[j])
+      }*/
     })
   }
 
@@ -61,6 +58,10 @@ export class GalleryLatestuploadsComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreImages() {
+    this.getXimagesOrderByLatestUpload(this.nUploadedImages += 6)
   }
   
 }

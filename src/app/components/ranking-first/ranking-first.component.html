@@ -10,7 +10,7 @@
         <span class="fa fa-thumbs-down fa-2x"></span>
       </div>
     </div>
-    <div class="info col-xs-8 col-sm-7">
+    <div class="info col-xs-8 col-sm-6">
       <div *ngIf="thereAreUser">
         <span class="font_fjalla f_size"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a href="#">{{ bestuser.username }}</a></span>
       </div>
@@ -29,7 +29,6 @@
                   <div *ngIf="thereAreUser">
                     <strong><i class="fa fa-star-o" aria-hidden="true"></i> score: </strong>{{ bestuser.score }}<br>
                     <strong><i class="fa fa-eye" aria-hidden="true"></i> visits: </strong>{{ bestuser.visits }}<br>
-                    <strong><i class="fa fa-envelope-o" aria-hidden="true"></i> email: </strong>{{ bestuser.email }}
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -39,11 +38,18 @@
                   </div>
                 </div>
               </div>
+              <div class="row">
+                  <div class="col-md-12">
+                    <div *ngIf="thereAreUser">
+                      <strong><i class="fa fa-envelope-o" aria-hidden="true"></i> email: </strong>{{ bestuser.email }}
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
     </div>
-    <div class="author col-xs-2 col-sm-3">
+    <div class="author col-xs-2 col-sm-3 col-md-4">
         <div class="profile-image hidden-xs">
           <div *ngIf="thereAreUser">
             <img src="http://localhost:3001/api/user/{{ bestuser._id }}/avatar"/>

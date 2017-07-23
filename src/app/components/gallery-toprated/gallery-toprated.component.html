@@ -24,73 +24,33 @@
         <span id="txt_visited">TOP RATED</span>
     </div>
     <div class="panel-body panel_body">
-        <div class="col-md-4 col-sm-4 col-xs-6 div_img">
-            <div *ngIf="thereAreImages">
-                <img src="http://localhost:3001/api/image/{{ imagesId[0] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#modaltoprated" (click)="selectImage(0)" />
-            </div>
-            <div class="row hidden-sm hidden-xs">
-                <div class="col-md-3">
-                    <div class="div_lvl">
-                        <div class="Aligner">
-                            <div class="Aligner-item Aligner-item--top"></div>
-                            <div class="Aligner-item txt_lvl">{{ scoreUsers[0] | level }}</div>
-                            <div class="Aligner-item Aligner-item--bottom txt_num">LVL</div>
+        <div *ngFor="let image of imagesId; let i = index">
+            <div class="col-md-4 col-sm-4 col-xs-6 div_img">
+                <div *ngIf="thereAreImages">
+                    <img src="http://localhost:3001/api/image/{{ imagesId[i] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#modaltoprated" (click)="selectImage(0)" />
+                </div>
+                <div class="row hidden-sm hidden-xs">
+                    <div class="col-md-3">
+                        <div class="div_lvl">
+                            <div class="Aligner">
+                                <div class="Aligner-item Aligner-item--top"></div>
+                                <div class="Aligner-item txt_lvl">{{ scoreUsers[i] | level }}</div>
+                                <div class="Aligner-item Aligner-item--bottom txt_num">LVL</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[0] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[0]]"> {{ usernames[0] }}</a></span><br>
-                    <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImages[0] }}</span><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-6 div_img">
-            <div *ngIf="thereAreImages">
-                <img src="http://localhost:3001/api/image/{{ imagesId[1] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#modaltoprated" (click)="selectImage(1)" />
-            </div>
-            <div class="row hidden-sm hidden-xs">
-                <div class="col-md-3">
-                    <div class="div_lvl">
-                        <div class="Aligner">
-                            <div class="Aligner-item Aligner-item--top"></div>
-                            <div class="Aligner-item txt_lvl">{{ scoreUsers[1] | level }}</div>
-                            <div class="Aligner-item Aligner-item--bottom txt_num">LVL</div>
-                        </div>
+                    <div class="col-md-9">
+                        <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[i] | uppercase }}</strong></span><br>
+                        <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[i]]"> {{ usernames[i] }}</a></span><br>
+                        <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImages[i] }}</span><br>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[1] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[1]]"> {{ usernames[1] }}</a></span><br>
-                    <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImages[1]  }}</span><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-4 col-xs-6 hidden-xs div_img">
-            <div *ngIf="thereAreImages">
-                <img src="http://localhost:3001/api/image/{{ imagesId[2] }}/urlimage" class="img-responsive image_padd" data-toggle="modal" data-target="#modaltoprated" (click)="selectImage(2)" />
-            </div>
-            <div class="row hidden-sm hidden-xs">
-                <div class="col-md-3">
-                    <div class="div_lvl">
-                        <div class="Aligner">
-                            <div class="Aligner-item Aligner-item--top"></div>
-                            <div class="Aligner-item txt_lvl">{{ scoreUsers[2] | level }}</div>
-                            <div class="Aligner-item Aligner-item--bottom txt_num">LVL</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <span class="txt_title"><i class="fa fa-tag" aria-hidden="true"></i> <strong>{{ imagesTitles[2] | uppercase }}</strong></span><br>
-                    <span><i class="fa fa-user-circle" aria-hidden="true"></i><a [routerLink]="['app-profile/profileuser', usersId[2]]"> {{ usernames[2] }}</a></span><br>
-                    <span class="txt_score"><i class="fa fa-star" aria-hidden="true"></i> {{ scoreImages[2] }}</span><br>
                 </div>
             </div>
         </div>
     </div>
     <hr class="without_margin">
     <br>
-    <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-warning btn-circle btn-lg center-block" (click)="loadMoreImages()"><i class="fa fa-plus" aria-hidden="true"></i></button>
     <div class="text-center loadimages"><strong>LOAD MORE IMAGES</strong></div>
     <br>
 </div>

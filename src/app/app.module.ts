@@ -48,7 +48,8 @@ import { RankingListallComponent } from './components/ranking-listall/ranking-li
 import { RankingIllustrationComponent } from './components/ranking-illustration/ranking-illustration.component'
 import { RankingPhotographyComponent } from './components/ranking-photography/ranking-photography.component'
 import { RankingModelingComponent } from './components/ranking-modeling/ranking-modeling.component'
-import { ProfileUserComponent } from './components/profile-user/profile-user.component'
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { RankingAsideComponent } from './components/ranking-aside/ranking-aside.component'
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     RankingIllustrationComponent,
     RankingPhotographyComponent,
     RankingModelingComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    RankingAsideComponent
   ],
   imports: [
     BrowserModule,

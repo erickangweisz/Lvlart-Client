@@ -35,12 +35,14 @@ export class GalleryDuelsComponent implements OnInit {
   public themesTitles = new Array
   public themesCategory = new Array
 
+  public nUploadedDuels = 3
+
   constructor(private duelService: DuelService, 
               private userService: UserService,
               private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.getXduelsOrderByCreation(3)
+    this.getXduelsOrderByCreation(this.nUploadedDuels)
   }
 
   getXduelsOrderByCreation(number: number) {
@@ -97,6 +99,10 @@ export class GalleryDuelsComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreDuels() {
+    this.getXduelsOrderByCreation(this.nUploadedDuels += 3)
   }
 
 }

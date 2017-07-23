@@ -36,15 +36,22 @@ export class GalleryIllustrationComponent implements OnInit {
         this.userIdImagesOrderByCategory.push(res['images'][i].id_user)
 
         this.getUserById(this.userIdImagesOrderByCategory[i])
-        this.thereAreImages = true
       }
+      this.thereAreImages = true
+      /*this.imagesIdOrderByCategory.reverse()
+      this.titleImagesOrderByCategory.reverse()
+      this.scoreImagesOrderByCategory.reverse()
+      this.userIdImagesOrderByCategory.reverse()
+      for (let j=0; j<this.userIdImagesOrderByCategory.length; j++) {
+        this.getUserById(this.userIdImagesOrderByCategory[j])
+      }*/
     })
   }
 
   getUserById(userId: string) {
     this.userService.getUserById(userId).subscribe(res => {
-      this.usernames.push(res['user'].username) // push usernames in array *
       this.scoreUsers.push(res['user'].score)
+      this.usernames.push(res['user'].username) // push usernames in array *
     })
   }
 
