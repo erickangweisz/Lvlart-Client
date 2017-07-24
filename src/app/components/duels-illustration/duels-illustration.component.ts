@@ -35,16 +35,18 @@ export class DuelsIllustrationComponent implements OnInit {
   public themesTitles = new Array
   public themesCategory = new Array
 
+  public nUploadedDuels = 2
+
   constructor(private duelService: DuelService, 
               private userService: UserService,
               private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.getAllDuelsByCategory('illustration')
+    this.getXduelsByCategory(this.nUploadedDuels, 'illustration')
   }
 
-  getAllDuelsByCategory(category: string) {
-    this.duelService.getAllDuelsByCategory(category).subscribe(res => {
+  getXduelsByCategory(number: number, category: string) {
+    this.duelService.getXduelsByCategory(number, category).subscribe(res => {
       this.duelsOrderByCategory = res['duels']
       let lengthDuels = this.duelsOrderByCategory.length
       for (let i=0; i<lengthDuels; i++) {
@@ -60,13 +62,12 @@ export class DuelsIllustrationComponent implements OnInit {
         this.idImageChallenger[i] = this.duelsOrderByCategory[i]['id_image_challenger']
         this.idImageChallenged[i] = this.duelsOrderByCategory[i]['id_image_challenged']
 
-        this.thereAreDuels = true
-
         this.getUserByChallengedId(this.usersChallengedId[i])
         this.getUserByChallengerId(this.usersChallengerId[i])
 
         this.getThemesById(this.themesId[i])
       }
+      this.thereAreDuels = true
     })
   }
 
@@ -96,6 +97,10 @@ export class DuelsIllustrationComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreDuels() {
+    this.getXduelsByCategory(this.nUploadedDuels += 1, 'illustration')
   }
 
 }

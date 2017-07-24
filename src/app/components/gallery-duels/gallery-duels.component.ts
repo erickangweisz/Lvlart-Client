@@ -102,7 +102,7 @@ export class GalleryDuelsComponent implements OnInit {
   }
 
   loadMoreDuels() {
-    this.getXduelsOrderByCreation(this.nUploadedDuels += 3)
+    this.getXduelsOrderByCreation(this.nUploadedDuels += 1)
   }
 
 }

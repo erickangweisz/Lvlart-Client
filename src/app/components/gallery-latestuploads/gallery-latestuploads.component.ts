@@ -61,7 +61,7 @@ export class GalleryLatestuploadsComponent implements OnInit {
   }
 
   loadMoreImages() {
-    this.getXimagesOrderByLatestUpload(this.nUploadedImages += 6)
+    this.getXimagesOrderByLatestUpload(this.nUploadedImages += 3)
   }
   
 }

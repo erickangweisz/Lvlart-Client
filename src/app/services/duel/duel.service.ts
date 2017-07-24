@@ -22,4 +22,9 @@ export class DuelService {
         .map(res => res.json())
   }
 
+  public getXduelsByCategory(number: number, category: string) {
+    return this.http.get('http://localhost:3001/api/duels/' + number + '/category/' + category)
+        .map(res => res.json())
+  }
+
 }

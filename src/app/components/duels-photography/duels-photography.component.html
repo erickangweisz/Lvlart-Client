@@ -73,7 +73,7 @@
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <span class="txt_username"><i class="fa fa-user-circle" aria-hidden="true"></i><a href="#"> {{ challengerUsernames[i] }}</a></span><br>
                     <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ likesUserChallenger[i] }}</span><br>
-                    <span><i class="fa fa-hashtag" aria-hidden="true"></i> {{ themesCategory[i] }}</span>
+                    <span><i class="fa fa-hashtag" aria-hidden="true"></i> {{ categoryDuels[i] }}</span>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-6 text-center">
                     <img src="http://localhost:3001/images/vs" class="img_style">
@@ -81,7 +81,7 @@
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <span class="pull-right txt_username"><a href="#"> {{ challengedUsernames[i] }}</a> <i class="fa fa-user-circle" aria-hidden="true"></i></span><br>
                     <span class="pull-right">{{ likesUserChallenged[i] }} <i class="fa fa-thumbs-o-up icon-flipped" aria-hidden="true"></i></span><br>
-                    <span class="pull-right"> {{ themesCategory[i] }} <i class="fa fa-hashtag" aria-hidden="true"></i></span>
+                    <span class="pull-right"> {{ categoryDuels[i] }} <i class="fa fa-hashtag" aria-hidden="true"></i></span>
                 </div>
                 <div class="col-md-2 col-sm-3 col-xs-3">
                     <div *ngIf="idImageChallenged.length > 0">
@@ -100,7 +100,7 @@
             <hr>
         </div>
     </div>
-    <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-warning btn-circle btn-lg center-block" (click)="loadMoreDuels()"><i class="fa fa-plus" aria-hidden="true"></i></button>
     <div class="text-center loadimages"><strong>LOAD MORE DUELS</strong></div>
     <br>
 </div>

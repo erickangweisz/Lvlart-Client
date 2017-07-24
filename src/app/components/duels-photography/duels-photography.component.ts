@@ -21,6 +21,7 @@ export class DuelsPhotographyComponent implements OnInit {
   public likesUserChallenger = new Array
   public idImageChallenged = new Array
   public idImageChallenger = new Array
+  public categoryDuels = new Array
 
   // users variables
   public usersChallengedId = new Array
@@ -35,16 +36,18 @@ export class DuelsPhotographyComponent implements OnInit {
   public themesTitles = new Array
   public themesCategory = new Array
 
+  public nUploadedDuels = 2
+
   constructor(private duelService: DuelService, 
               private userService: UserService,
               private themeService: ThemeService) {}
 
   ngOnInit() {
-    this.getAllDuelsByCategory('photography')
+    this.getXduelsByCategory(this.nUploadedDuels, 'photography')
   }
 
-  getAllDuelsByCategory(category: string) {
-    this.duelService.getAllDuelsByCategory(category).subscribe(res => {
+  getXduelsByCategory(number: number, category: string) {
+    this.duelService.getXduelsByCategory(number, category).subscribe(res => {
       this.duelsOrderByCategory = res['duels']
       let lengthDuels = this.duelsOrderByCategory.length
       for (let i=0; i<lengthDuels; i++) {
@@ -59,6 +62,8 @@ export class DuelsPhotographyComponent implements OnInit {
 
         this.idImageChallenger[i] = this.duelsOrderByCategory[i]['id_image_challenger']
         this.idImageChallenged[i] = this.duelsOrderByCategory[i]['id_image_challenged']
+
+        this.categoryDuels[i] = this.duelsOrderByCategory[i]['category']
 
         this.thereAreDuels = true
 
@@ -96,6 +101,10 @@ export class DuelsPhotographyComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreDuels() {
+    this.getXduelsByCategory(this.nUploadedDuels += 1, 'photography')
   }
 
 }
