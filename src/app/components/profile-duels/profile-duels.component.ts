@@ -71,18 +71,17 @@ export class ProfileDuelsComponent implements OnInit {
 
         if (this.duels[i]['id_image_challenged'] == null || 
             this.duels[i]['id_image_challenger'] == null) {
-              this.thereAreImages = false
-            } else {
-              this.thereAreImages = true
-            }
-
-        this.thereAreDuels = true
+          this.thereAreImages = false
+        } else {
+          this.thereAreImages = true
+        }
 
         this.getUserByChallengedId(this.usersChallengedId[i])
         this.getUserByChallengerId(this.usersChallengerId[i])
 
         this.getThemesById(this.themesId[i])
       }
+      this.thereAreDuels = true
     })
   }
 

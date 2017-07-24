@@ -32,4 +32,9 @@ export class ImageService {
         .map(res => res.json())
   }
 
+  public getXimagesByUserId(number: number, userId: string) {
+    return this.http.get('http://localhost:3001/api/images/' + number + '/userid/' + userId)
+        .map(res => res.json())
+  }
+
 }

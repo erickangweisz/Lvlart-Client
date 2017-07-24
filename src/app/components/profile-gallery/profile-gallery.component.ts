@@ -19,6 +19,7 @@ export class ProfileGalleryComponent implements OnInit {
   public arrayLength = 8 // length by default
 
   public thereAreImages = false
+  public nUploadedImages = 4
 
   constructor(private imageService: ImageService,
               private activatedRoute: ActivatedRoute) {}
@@ -34,11 +35,11 @@ export class ProfileGalleryComponent implements OnInit {
     else
       this.userid = localStorage.getItem('userid_lastvisited')
 
-    this.getAllImagesByUserId(this.userid)
+    this.getXimagesByUserId(this.nUploadedImages, this.userid)
   }
 
-  getAllImagesByUserId(userId: string) {
-    this.imageService.getAllImagesByUserId(userId).subscribe(res => {
+  getXimagesByUserId(number: number, userId: string) {
+    this.imageService.getXimagesByUserId(number, userId).subscribe(res => {
       this.images = res['images']
       let imagesLength = this.images.length
       if (imagesLength > 0) this.thereAreImages = true
@@ -52,6 +53,10 @@ export class ProfileGalleryComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreImages() {
+    this.getXimagesByUserId(this.nUploadedImages += 4, this.userid)
   }
 
 }
