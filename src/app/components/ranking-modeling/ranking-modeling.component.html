@@ -3,7 +3,7 @@
         <ul class="list-group">
             <div *ngIf="thereAreUsers">
                 <div *ngFor="let user of bestmodeling; let i = index">
-                    <div *ngIf="i < 5">
+                    <div *ngIf="i < nUploadedUsers">
                         <li class="list-group-item c_lightorange">
                             <div class="row">
                                 <div class="col-md-2 c_darkgrey">
@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="col-xs-6 col-md-6">
                                     <div>
-                                        <a href="#" class="text_username">{{ bestmodeling[i].username }}</a>
+                                        <a [routerLink]="['../app-profile/profileuser', bestmodeling[i]._id]" class="text_username">{{ bestmodeling[i].username }}</a>
                                         <div class="comment-text">
                                             <i class="fa fa-eye" aria-hidden="true"></i> visits: {{ bestmodeling[i].visits }}
                                         </div>
@@ -25,7 +25,7 @@
                                     <img src="http://localhost:3001/api/user/{{ bestmodeling[i]._id }}/avatar" class="img-circle img-responsive m_top" alt=""/>
                                 </div>
                                 <div class="co-md-2 m_top">
-                                    <span class="font_fjalla">{{ bestmodeling[i].firstname | uppercase }}{{ bestmodeling[i].lastname | uppercase }}</span><br>
+                                    <span class="font_fjalla">{{ bestmodeling[i].firstname | uppercase }} {{ bestmodeling[i].lastname | uppercase }}</span><br>
                                     <span class="font_fjalla">CATEGORY: {{ bestmodeling[i].category }}</span><br>
                                     <span class="font_fjalla">LVL: {{ bestmodeling[i].score | level }}</span>
                                 </div>
@@ -37,7 +37,7 @@
         </ul>
         <hr class="without_margin">
         <br>
-        <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-warning btn-circle btn-lg center-block" (click)="loadMoreUsers()"><i class="fa fa-plus" aria-hidden="true"></i></button>
         <div class="text-center loadimages"><strong>LOAD MORE USERS</strong></div>
         <br>
     </div>

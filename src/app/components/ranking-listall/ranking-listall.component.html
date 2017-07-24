@@ -3,7 +3,7 @@
         <ul class="list-group">
             <div *ngIf="thereAreUsers">
                 <div *ngFor="let user of bestusers; let i = index">
-                    <div *ngIf="i < 4">
+                    <div *ngIf="i < nUploadedUsers-1">
                     <li class="list-group-item c_lightorange">
                         <div class="row">
                             <div class="col-md-2 c_darkgrey">
@@ -12,7 +12,7 @@
                             </div>
                             <div class="col-xs-6 col-md-6">
                                 <div>
-                                    <a href="#" class="text_username">{{ bestusers[i + 1].username }}</a>
+                                    <a [routerLink]="['../app-profile/profileuser', bestusers[i+1]._id]" class="text_username">{{ bestusers[i + 1].username }}</a>
                                     <div class="comment-text">
                                         <i class="fa fa-eye" aria-hidden="true"></i> visits: {{ bestusers[i + 1].visits }}
                                     </div>
@@ -25,7 +25,7 @@
                                 <img src="http://localhost:3001/api/user/{{ bestusers[i + 1]._id }}/avatar" class="img-circle img-responsive m_top img_avatar" alt=""/>
                             </div>
                             <div class="co-md-2 m_top">
-                                <span class="font_fjalla">{{ bestusers[i + 1].firstname | uppercase }}{{ bestusers[i + 1].lastname | uppercase }}</span><br>
+                                <span class="font_fjalla">{{ bestusers[i + 1].firstname | uppercase }} {{ bestusers[i + 1].lastname | uppercase }}</span><br>
                                 <span class="font_fjalla">CATEGORY: {{ bestusers[i + 1].category }}</span><br>
                                 <span class="font_fjalla">LVL: {{ bestusers[i + 1].score | level }}</span>
                             </div>
@@ -37,7 +37,7 @@
         </ul>
         <hr class="without_margin">
         <br>
-        <button type="button" class="btn btn-warning btn-circle btn-lg center-block"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-warning btn-circle btn-lg center-block" (click)="loadMoreUsers()"><i class="fa fa-plus" aria-hidden="true"></i></button>
         <div class="text-center loadimages"><strong>LOAD MORE USERS</strong></div>
         <br>
     </div>

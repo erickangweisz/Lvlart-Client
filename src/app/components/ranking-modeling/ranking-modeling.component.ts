@@ -12,10 +12,12 @@ export class RankingModelingComponent implements OnInit {
   bestmodeling = new Array
   thereAreUsers = false
 
+  public nUploadedUsers = 3
+
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByCategory(6, 'modeling')
+    this.getXusersOrderByCategory(this.nUploadedUsers, 'modeling')
   }
 
   getXusersOrderByCategory(number: number, category: string) {
@@ -23,6 +25,10 @@ export class RankingModelingComponent implements OnInit {
       this.bestmodeling = res['users']
       this.thereAreUsers = true
     })
+  }
+
+  loadMoreUsers() {
+    this.getXusersOrderByCategory(this.nUploadedUsers += 1, 'modeling')
   }
 
 }

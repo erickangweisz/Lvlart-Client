@@ -12,7 +12,7 @@
     </div>
     <div class="info col-xs-8 col-sm-6">
       <div *ngIf="thereAreUser">
-        <span class="font_fjalla f_size"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a href="#">{{ bestuser.username }}</a></span>
+        <span class="font_fjalla f_size"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a [routerLink]="['../app-profile/profileuser', bestuser._id]">{{ bestuser.username }}</a></span>
       </div>
       <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
       <div class="hidden-xs">

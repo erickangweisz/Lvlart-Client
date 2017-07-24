@@ -12,10 +12,12 @@ export class RankingPhotographyComponent implements OnInit {
   bestphotography = new Array
   thereAreUsers = false
 
+  public nUploadedUsers = 3
+
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByCategory(6, 'photography')
+    this.getXusersOrderByCategory(this.nUploadedUsers, 'photography')
   }
 
   getXusersOrderByCategory(number: number, category: string) {
@@ -23,6 +25,10 @@ export class RankingPhotographyComponent implements OnInit {
       this.bestphotography = res['users']
       this.thereAreUsers = true
     })
+  }
+
+  loadMoreUsers() {
+    this.getXusersOrderByCategory(this.nUploadedUsers += 1, 'photography')
   }
 
 }

@@ -12,10 +12,12 @@ export class RankingListallComponent implements OnInit {
   bestusers = new Array
   thereAreUsers = false
 
+  public nUploadedUsers = 3
+
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByScore(5)
+    this.getXusersOrderByScore(this.nUploadedUsers)
   }
 
   getXusersOrderByScore(number: number) {
@@ -23,6 +25,10 @@ export class RankingListallComponent implements OnInit {
       this.bestusers = res['users']
       this.thereAreUsers = true
     })
+  }
+
+  loadMoreUsers() {
+    this.getXusersOrderByScore(this.nUploadedUsers += 1)
   }
 
 }

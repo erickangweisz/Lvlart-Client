@@ -12,10 +12,12 @@ export class RankingIllustrationComponent implements OnInit {
   bestillustration = new Array
   thereAreUsers = false
 
+  public nUploadedUsers = 3
+
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.getXusersOrderByCategory(6, 'illustration')
+    this.getXusersOrderByCategory(this.nUploadedUsers, 'illustration')
   }
 
   getXusersOrderByCategory(number: number, category: string) {
@@ -23,6 +25,10 @@ export class RankingIllustrationComponent implements OnInit {
       this.bestillustration = res['users']
       this.thereAreUsers = true
     })
+  }
+
+  loadMoreUsers() {
+    this.getXusersOrderByCategory(this.nUploadedUsers += 1, 'illustration')
   }
 
 }
