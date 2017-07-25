@@ -27,4 +27,9 @@ export class DuelService {
         .map(res => res.json())
   }
 
+  public getXduelsByUserId(number: number, userId: string) {
+    return this.http.get('http://localhost:3001/api/duels/' + number + '/userid/' + userId)
+        .map(res => res.json())
+  }
+
 }

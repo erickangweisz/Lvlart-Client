@@ -20,6 +20,8 @@ export class ProfileCommentsComponent implements OnInit {
 
   public senderUsernames = new Array
 
+  isLoged = localStorage.getItem('user_id')
+
   constructor(private commentService: CommentService,
               private userService: UserService,
               private activatedRoute: ActivatedRoute) {}

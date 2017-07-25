@@ -5,7 +5,7 @@
                 <span>MY WALL</span>
             </div>
             <div class="panel-body" id="panel_body">
-                <div style="height: 560px">
+                <div>
                     <div *ngFor="let comment of comments; let i = index">
                         <strong>{{ senderUsernames[i] }}:</strong> <i class="pull-right">({{ createdAt[i] | date: 'short' }})</i><br>
                         <hr class="margin_hr">
@@ -15,6 +15,11 @@
                         </p>
                         <br>
                     </div>
+                    <br>
+                    <br>
+                    <hr>
+                    <textarea *ngIf="isLoged" class="form-control"></textarea>
+                    <button *ngIf="isLoged" class="btn btn-primary form-control margin_down">comment</button>
                 </div>
             </div>
         </div>

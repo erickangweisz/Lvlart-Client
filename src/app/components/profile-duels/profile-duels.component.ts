@@ -36,6 +36,8 @@ export class ProfileDuelsComponent implements OnInit {
   public imageModal = 0
   public lengthArray = 3 // length by default
 
+  public nUploadedDuels = 2
+
   constructor(private duelService: DuelService, 
               private userService: UserService,
               private themeService: ThemeService,
@@ -52,11 +54,11 @@ export class ProfileDuelsComponent implements OnInit {
     else
       this.userid = localStorage.getItem('userid_lastvisited')
 
-    this.getAllDuelsByUserId(this.userid)
+    this.getXduelsByUserId(this.nUploadedDuels, this.userid)
   }
 
-  getAllDuelsByUserId(userId: string) {
-    this.duelService.getAllDuelsByUserId(userId).subscribe(res => {
+  getXduelsByUserId(number: number, userId: string) {
+    this.duelService.getXduelsByUserId(number, userId).subscribe(res => {
       this.duels = res['duels']
       let lengthDuels = this.duels.length
       for (let i=0; i<lengthDuels; i++) {
@@ -111,6 +113,10 @@ export class ProfileDuelsComponent implements OnInit {
   // select image modal
   selectImage(i: number) {
     this.imageModal = i
+  }
+
+  loadMoreImages() {
+    this.getXduelsByUserId(this.nUploadedDuels += 1, this.userid)
   }
 
 }

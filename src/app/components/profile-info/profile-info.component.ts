@@ -19,6 +19,8 @@ export class ProfileInfoComponent implements OnInit {
   public thereAreUser = false
   public urlImageInfo = ""
 
+  public user = localStorage.getItem('user_id')
+
   constructor(private userService: UserService,
               private activatedRoute: ActivatedRoute) {}
 
