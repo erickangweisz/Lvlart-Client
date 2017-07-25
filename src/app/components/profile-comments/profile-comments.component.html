@@ -17,7 +17,7 @@
                     </div>
                     <br>
                     <br>
-                    <hr>
+                    <hr *ngIf="isLoged">
                     <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm.value)" id="comment-form">
                         <div class="input-group">
                             <textarea *ngIf="isLoged" class="form-control" name="comment" ngModel id="comment"></textarea>
