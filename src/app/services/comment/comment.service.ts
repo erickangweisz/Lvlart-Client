@@ -12,4 +12,14 @@ export class CommentService {
         .map(res => res.json())
   }
 
+  public createComment(comment: string, id_user_receiver: string, id_user_sender: string) {
+    let body = {
+      "comment": comment,
+      "id_user_receiver": id_user_receiver,
+      "id_user_sender": id_user_sender
+    }
+    return this.http.post('http://localhost:3001/api/comment', body)
+        .map(res => res.json())
+  }
+
 }

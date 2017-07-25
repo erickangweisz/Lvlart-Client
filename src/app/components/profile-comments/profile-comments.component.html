@@ -18,8 +18,12 @@
                     <br>
                     <br>
                     <hr>
-                    <textarea *ngIf="isLoged" class="form-control"></textarea>
-                    <button *ngIf="isLoged" class="btn btn-primary form-control margin_down">comment</button>
+                    <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm.value)" id="comment-form">
+                        <div class="input-group">
+                            <textarea *ngIf="isLoged" class="form-control" name="comment" ngModel id="comment"></textarea>
+                            <button type="submit" *ngIf="isLoged" class="btn btn-primary form-control margin_down">comment</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
