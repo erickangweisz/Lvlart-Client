@@ -1,21 +1,104 @@
 <div class="container">
+  <br><br><br>
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <br><br><br><br><br>
-      <div class="panel panel-default">
-        <div class="panel-heading panel_heading">
-          <span id="txt_visited">
-            <i class="fa fa-upload" aria-hidden="true"></i> UPLOAD IMAGES
-        </span>
-        </div>
-        <div class="panel-body">
-          <h3>Upload images in your gallery!</h3>
-          <br>
-          <image-upload (onFileUploadFinish)="imageUploaded($event)"></image-upload>
-          <br>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Rules of uploading</div>
+            <div class="panel-body">
+                Ad exercitation officia consectetur irure laborum aliqua. Magna qui exercitation minim mollit. Eu sint enim amet eu incididunt sit est commodo eiusmod aliquip dolor ipsum incididunt. Velit irure nostrud do est nostrud cillum.
+                Ad exercitation officia consectetur irure laborum aliqua. Magna qui exercitation minim mollit. Eu sint enim amet eu incididunt sit est commodo eiusmod aliquip dolor ipsum incididunt. Velit irure nostrud do est nostrud cillum.
+            </div>
         </div>
       </div>
-      <br><br><br><br><br><br>
-    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+            <!--<form #uploadingForm="ngForm" (ngSubmit)="onSubmit(uploadingForm.value)" id="uploading-form">-->
+                <!--<div class="form-group">
+                    <label for="multiple">Multiple</label>
+                    <input type="file" class="form-control" name="multiple" ng2FileSelect [uploader]="uploader" multiple  />
+                </div>-->
+                <div class="form-group">
+                    <label for="single">single</label>
+                    <input type="file" class="form-control" name="single" ng2FileSelect [uploader]="uploader" id="submit"/>    
+                    <input #title_ type="text" class="form-control" name="title" ngModel placeholder="image title" required/>                              
+                    <input #description_ type="text" class="form-control" name="description" ngModel placeholder="image description" required/>                          
+                </div>            
+            <!--</form>-->
+            </div>
+          </div>
+      </div>
+      <div class="col-md-8">
+          <h3>File Upload</h3>
+          <!--Queue length: {{ uploader?.queue?.length }}-->
+          <table class="table">
+              <thead>
+              <tr>
+                  <th width="50%">Name</th>
+                  <th>Size</th>
+                  <th>Progress</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of uploader.queue">
+                  <td><strong>{{ item.file.name }}</strong></td>
+                  <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+                  <td>
+                      <div class="progress" style="margin-bottom: 0;">
+                          <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                      </div>
+                  </td>
+                  <td class="text-center">
+                      <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                      <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                      <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                  </td>
+                  <td nowrap>
+                      <button type="submit" class="btn btn-success btn-xs"
+                              (click)="item.upload()" (keypress)="saveImage()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                          <span class="glyphicon glyphicon-upload"></span> Upload
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs"
+                              (click)="item.cancel()" [disabled]="!item.isUploading">
+                          <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                      </button>
+                      <button type="button" class="btn btn-danger btn-xs"
+                              (click)="item.remove()">
+                          <span class="glyphicon glyphicon-trash"></span> Remove
+                      </button>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
+
+          <!--<div>
+              <div>
+                  Queue progress:
+                  <div class="progress" style="">
+                      <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                  </div>
+              </div>
+              <button type="button" class="btn btn-success btn-s"
+                      (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+                  <span class="glyphicon glyphicon-upload"></span> Upload all
+              </button>
+              <button type="button" class="btn btn-warning btn-s"
+                      (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+                  <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+              </button>
+              <button type="button" class="btn btn-danger btn-s"
+                      (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+                  <span class="glyphicon glyphicon-trash"></span> Remove all
+              </button>
+          </div>-->
+      </div>
   </div>
 </div>
+<br><br><br>

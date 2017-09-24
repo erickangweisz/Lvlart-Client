@@ -37,4 +37,16 @@ export class ImageService {
         .map(res => res.json())
   }
 
+  public saveImage(title: string, description: string, 
+                   id_user: string, category: string) {
+    let body = {
+      title: title,
+      description: description,
+      id_user: id_user,
+      category: category
+    }
+    return this.http.post('http://localhost:3001/api/image', body)
+        .map(res => res.json())
+  }
+
 }
